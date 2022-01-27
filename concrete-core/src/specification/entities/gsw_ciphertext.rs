@@ -14,7 +14,8 @@ use concrete_commons::parameters::{DecompositionBaseLog, DecompositionLevelCount
 ///
 /// An GSW ciphretext is an encryption of a plaintext.
 /// It is a vector of Lev ciphertexts.
-/// It is a specialization of [`GGSW ciphertexts`](`GgswCiphertextEntity`).
+/// It is a specialization of
+/// [`GGSW ciphertexts`](`crate::specification::entities::GgswCiphertextEntity`).
 ///
 /// We call $q$ the ciphertext modulus.
 ///
@@ -37,12 +38,14 @@ use concrete_commons::parameters::{DecompositionBaseLog, DecompositionLevelCount
 /// level and an integer $\beta$ (generally a power of 2) called decomposition base.
 ///
 /// ## Secret Key
-/// A GSW ciphertext is encrypted under an [`LWE secret key`](`LweSecretKeyEntity`).
+/// A GSW ciphertext is encrypted under an
+/// [`LWE secret key`](`crate::specification::entities::LweSecretKeyEntity`).
 ///
 /// ## GSW Encryption
 /// ###### inputs:
 /// - $\mathsf{pt}\in\mathbb{Z}_q$: a plaintext
-/// - $\vec{s}\in\mathbb{Z}_q^n$: an [`LWE secret key`](`LweSecretKeyEntity`)
+/// - $\vec{s}\in\mathbb{Z}_q^n$: an
+/// [`LWE secret key`](`crate::specification::entities::LweSecretKeyEntity`)
 /// - $\mathcal{D_{\sigma^2,\mu}}$: a normal distribution of variance $\sigma^2$ and a mean of $\mu$
 /// - $\ell$: number of levels desired
 /// - $\beta$: decomposition base
@@ -83,7 +86,7 @@ use concrete_commons::parameters::{DecompositionBaseLog, DecompositionLevelCount
 /// description helps understanding GSW ciphertext.
 ///
 /// An Lev ciphretext is an encryption of a plaintext.
-/// It is a vector of [`LWE ciphertexts`](`LweCiphertextEntity`).
+/// It is a vector of [`LWE ciphertexts`](`crate::specification::entities::LweCiphertextEntity`).
 /// It is a specialization of GLev ciphertexts.
 ///
 /// We call $q$ the ciphertext modulus.
@@ -98,7 +101,8 @@ use concrete_commons::parameters::{DecompositionBaseLog, DecompositionLevelCount
 /// \right)\subseteq \mathbb{Z}_q^{(n+1)}$ (we are using the encoding in the MSB with $\Delta =
 /// \frac{q}{\beta^{i+1}}$).
 ///
-/// This type of ciphertext contains redundancy ($\ell$ [`LWE Ciphertext`](`LweCiphertextEntity`),
+/// This type of ciphertext contains redundancy ($\ell$
+/// [`LWE Ciphertext`](`crate::specification::entities::LweCiphertextEntity`),
 /// each encrypting the same plaintext times a different scaling factor).
 ///
 /// ## Decomposition base
@@ -136,8 +140,9 @@ use concrete_commons::parameters::{DecompositionBaseLog, DecompositionLevelCount
 /// \right)$
 ///
 /// ## Lev Decryption
-/// Simply use the [`LWE decryption
-/// algorithm`](`crate::specification::engines::LweCiphertextDecryptionEngine`) on one of the LWE
+/// Simply use the
+/// [`LWE decryption algorithm`](`crate::specification::engines::LweCiphertextDecryptionEngine`)
+/// on one of the LWE
 /// ciphertexts contained in the Lev ciphertext.
 pub trait GswCiphertextEntity: AbstractEntity<Kind = GswCiphertextKind> {
     /// The distribution of the key the ciphertext was encrypted with.

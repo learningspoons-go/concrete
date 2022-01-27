@@ -22,7 +22,7 @@ use concrete_commons::parameters::{GlweDimension, PolynomialSize};
 /// ciphertexts`](`crate::specification::entities::LweCiphertextEntity`) and RLWE ciphertexts.
 /// GLWE requires a cyclotomic ring.
 /// We use the notation $\mathcal{R}_q$ for the following cyclotomic ring:
-/// $\mathbb{Z}_q[X]/\left\langle X^N + 1\right\rangle$ where $N\in\mathbb{N}$ is a power of two.
+/// $\mathbb{Z}_q\[X\]/\left\langle X^N + 1\right\rangle$ where $N\in\mathbb{N}$ is a power of two.
 ///
 /// We call $q$ the ciphertext modulus and $N$ the ring dimension.
 ///

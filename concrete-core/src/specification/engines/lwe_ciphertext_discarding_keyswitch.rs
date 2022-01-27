@@ -54,9 +54,11 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingKeyswitchError<Engin
 /// \left( \vec{a}_{\mathsf{out}} , b_{\mathsf{out}}\right) \in
 /// \mathsf{LWE}^{n_{\mathsf{out}}}_{\vec{s}_{\mathsf{out}}}( \mathsf{pt} )\subseteq
 /// \mathbb{Z}_q^{(n_{\mathsf{out}}+1)}$ where $n_{\mathsf{in}} = |\vec{s}_{\mathsf{in}}|$ and
-/// $n_{\mathsf{out}} = |\vec{s}_{\mathsf{out}}|$. It requires a [`key
-/// switching key`](`LweKeyswitchKeyEntity`). The input ciphertext is encrypted under the [`LWE
-/// secret key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{in}}$ and the output ciphertext is
+/// $n_{\mathsf{out}} = |\vec{s}_{\mathsf{out}}|$. It requires a
+/// [`key switching key`](`crate::specification::entities::LweKeyswitchKeyEntity`).
+/// The input ciphertext is encrypted under the
+/// [`LWE secret key`](`crate::specification::entities::LweSecretKeyEntity`)
+/// $\vec{s}_{\mathsf{in}}$ and the output ciphertext is
 /// encrypted under the [`LWE secret key`](`crate::specification::entities::LweSecretKeyEntity`)
 /// $\vec{s}_{\mathsf{out}}$.
 ///

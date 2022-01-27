@@ -14,7 +14,8 @@ use concrete_commons::parameters::LweDimension;
 ///
 /// An LWE ciphretext is an encryption of a plaintext.
 /// It is secure under the hardness assumption called Learning With Errors (LWE).
-/// It is a specialization of [`GLWE ciphertext`](`GlweCiphertextEntity`).
+/// It is a specialization of
+/// [`GLWE ciphertext`](`crate::specification::entities::GlweCiphertextEntity`).
 ///
 /// We indicate an LWE ciphertext of a plaintext $\mathsf{pt} \in\mathbb{Z}_q$ as the following
 /// couple: $$\mathsf{ct} = \left( \vec{a} , b\right) \in \mathsf{LWE}^n_{\vec{s}}( \mathsf{pt}

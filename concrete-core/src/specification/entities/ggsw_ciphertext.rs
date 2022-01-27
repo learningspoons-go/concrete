@@ -20,7 +20,8 @@ use concrete_commons::parameters::{
 ///
 /// We call $q$ the ciphertext modulus.
 /// We use the notation $\mathcal{R}_q$ for the following cyclotomic ring:
-/// $\mathbb{Z}_q[X]/\left\langle X^N + 1\right\rangle$ where $N\in\mathbb{N}$ is a power of two.
+/// $\mathbb{Z}_q\[X\]/\left\langle X^N + 1\right\rangle$ where $N\in\mathbb{N}$ is a
+/// power of two.
 ///
 /// We indicate a GGSW ciphertext of a polynomial plaintext $\mathsf{PT} \in\mathcal{R}_q$ as the
 /// following vector: $$\overline{\overline{\mathsf{CT}}} = \left( \overline{\mathsf{CT}_0}, \cdots
@@ -48,8 +49,8 @@ use concrete_commons::parameters::{
 /// ## GGSW Encryption
 /// ###### inputs:
 /// - $\mathsf{PT}\in\mathcal{R}_q$: a polynomial plaintext
-/// - $\vec{S}=\left(S_0, \cdots, S_{k-1} \right) \in\mathcal{R}_q^k$: an [`GLWE secret
-///   key`](`GlweSecretKeyEntity`)
+/// - $\vec{S}=\left(S_0, \cdots, S_{k-1} \right) \in\mathcal{R}_q^k$: an
+/// [`GLWE secret key`](`crate::specification::entities::GlweSecretKeyEntity`)
 /// - $\mathcal{D_{\sigma^2,\mu}}$: a normal distribution of variance $\sigma^2$ and a mean of $\mu$
 /// - $\ell$: number of levels desired
 /// - $\beta$: decomposition base
@@ -96,7 +97,7 @@ use concrete_commons::parameters::{
 ///
 /// We call $q$ the ciphertext modulus.
 /// We use the notation $\mathcal{R}_q$ for the following cyclotomic ring:
-/// $\mathbb{Z}_q[X]/\left\langle X^N + 1\right\rangle$ where $N\in\mathbb{N}$ is a power of two.
+/// $\mathbb{Z}_q\[X\]/\left\langle X^N + 1\right\rangle$ where $N\in\mathbb{N}$ is a power of two.
 ///
 /// We indicate a GLev ciphertext of a polynomial plaintext $\mathsf{PT} \in\mathcal{R}_q^{k+1}$ as
 /// the following vector: $$\overline{\mathsf{CT}} = \left( \mathsf{CT}_0 , \cdots ,
@@ -106,8 +107,7 @@ use concrete_commons::parameters::{
 /// Where $k=|\vec{S}|$ and for all $0\le i <\ell$, we have $\mathsf{CT}_i \in
 /// \mathsf{GLWE}_{\vec{S}}\left( \left\lfloor\mathsf{PT}\cdot \frac{q}{\beta^{i+1}} \right\rceil
 /// \right)\subseteq  \mathcal{R}_q^{k+1}$ (we are using the encoding in the MSB with $\Delta =
-/// \frac{q}{\beta^{i+1}}$ as described in [Encoding with the
-/// MSB](Encoding.md##Encoding%20with%20the%20MSB)).
+/// \frac{q}{\beta^{i+1}}$).
 ///
 /// This type of ciphertext contains redundancy ($\ell$ [`GLWE
 /// ciphertext`](`crate::specification::entities::GlweCiphertextEntity`), each encrypting the same
