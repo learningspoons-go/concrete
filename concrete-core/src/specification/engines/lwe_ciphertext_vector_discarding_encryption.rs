@@ -44,7 +44,7 @@ impl<EngineError: std::error::Error> LweCiphertextVectorDiscardingEncryptionErro
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`LweCiphertextEncryptionEngine`)
+/// cf [`here`](`crate::specification::engines::LweCiphertextEncryptionEngine`)
 pub trait LweCiphertextVectorDiscardingEncryptionEngine<
     SecretKey,
     PlaintextVector,

@@ -51,7 +51,7 @@ impl<EngineError: std::error::Error> LweCiphertextVectorDiscardingKeyswitchError
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`LweCiphertextDiscardingKeyswitchEngine`)
+/// cf [`here`](`crate::specification::engines::LweCiphertextDiscardingKeyswitchEngine`)
 pub trait LweCiphertextVectorDiscardingKeyswitchEngine<
     KeyswitchKey,
     InputCiphertextVector,

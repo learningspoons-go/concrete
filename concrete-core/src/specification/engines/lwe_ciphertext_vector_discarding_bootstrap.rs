@@ -73,7 +73,7 @@ impl<EngineError: std::error::Error> LweCiphertextVectorDiscardingBootstrapError
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`LweCiphertextDiscardingBootstrapEngine`)
+/// cf [`here`](`crate::specification::engines::LweCiphertextDiscardingBootstrapEngine`)
 pub trait LweCiphertextVectorDiscardingBootstrapEngine<
     BootstrapKey,
     AccumulatorVector,

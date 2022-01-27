@@ -17,7 +17,8 @@ engine_error! {
 ///
 /// # Formal Definition
 ///
-/// This generates a [`LWE encryption`](`LweCiphertextEncryptionEngine`) of zero.
+/// This generates a [`LWE encryption`]
+/// (`crate::specification::engines::LweCiphertextEncryptionEngine`) of zero.
 pub trait LweCiphertextZeroEncryptionEngine<SecretKey, Ciphertext>: AbstractEngine
 where
     SecretKey: LweSecretKeyEntity,

@@ -23,7 +23,8 @@ use concrete_commons::parameters::LweDimension;
 /// ## LWE dimension
 /// It corresponds to the number of element in the LWE secret key.
 /// In an LWE ciphertext, it is the lenght of the vector $\vec{a}$.
-/// At [`encryption`](`LweCiphertextEncryptionEngine`) time, it is the number of uniformly random
+/// At [`encryption`](`crate::specification::engines::LweCiphertextEncryptionEngine`) time, it is
+/// the number of uniformly random
 /// integers generated.
 pub trait LweCiphertextEntity: AbstractEntity<Kind = LweCiphertextKind> {
     /// The distribution of the key the ciphertext was encrypted with.

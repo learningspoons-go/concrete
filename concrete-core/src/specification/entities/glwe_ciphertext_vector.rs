@@ -13,7 +13,7 @@ use concrete_commons::parameters::{GlweCiphertextCount, GlweDimension, Polynomia
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`GlweCiphertextEntity`)
+/// cf [`here`](`crate::specification::entities::GlweCiphertextEntity`)
 pub trait GlweCiphertextVectorEntity: AbstractEntity<Kind = GlweCiphertextVectorKind> {
     /// The distribution of the key the ciphertext was encrypted with.
     type KeyDistribution: KeyDistributionMarker;

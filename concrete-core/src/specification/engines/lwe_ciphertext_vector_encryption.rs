@@ -18,7 +18,7 @@ engine_error! {
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`LweCiphertextEncryptionEngine`)
+/// cf [`here`](`crate::specification::engines::LweCiphertextEncryptionEngine`)
 pub trait LweCiphertextVectorEncryptionEngine<SecretKey, PlaintextVector, CiphertextVector>:
     AbstractEngine
 where

@@ -44,7 +44,7 @@ impl<EngineError: std::error::Error> LweCiphertextVectorDiscardingAdditionError<
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`LweCiphertextDiscardingAdditionEngine`)
+/// cf [`here`](`crate::specification::engines::LweCiphertextDiscardingAdditionEngine`)
 pub trait LweCiphertextVectorDiscardingAdditionEngine<InputCiphertextVector, OutputCiphertextVector>:
     AbstractEngine
 where

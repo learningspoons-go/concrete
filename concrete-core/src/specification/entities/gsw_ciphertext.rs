@@ -109,12 +109,14 @@ use concrete_commons::parameters::{DecompositionBaseLog, DecompositionLevelCount
 /// A Lev ciphertext contains a number of levels $\ell$ from level $0$ to level $\ell-1$.
 ///
 /// ## Secret Key
-/// A Lev ciphertext is encrypted under an [`LWE secret key`](`LweSecretKeyEntity`).
+/// A Lev ciphertext is encrypted under an [`LWE secret
+/// key`](`crate::specification::entities::LweSecretKeyEntity`).
 ///
 /// ## Lev Encryption
 /// ###### inputs:
 /// - $\mathsf{pt}\in\mathbb{Z}_q$: a plaintext
-/// - $\vec{s}\in\mathbb{Z}_q^n$: an [`LWE secret key`](`LweSecretKeyEntity`)
+/// - $\vec{s}\in\mathbb{Z}_q^n$: an [`LWE secret
+///   key`](`crate::specification::entities::LweSecretKeyEntity`)
 /// - $\mathcal{D_{\sigma^2,\mu}}$: a normal distribution of variance $\sigma^2$ and a mean of $\mu$
 /// - $\ell$: number of levels desired
 /// - $\beta$: decomposition base
@@ -134,7 +136,8 @@ use concrete_commons::parameters::{DecompositionBaseLog, DecompositionLevelCount
 /// \right)$
 ///
 /// ## Lev Decryption
-/// Simply use the [`LWE decryption algorithm`](`LweCiphertextDecryptionEngine`) on one of the LWE
+/// Simply use the [`LWE decryption
+/// algorithm`](`crate::specification::engines::LweCiphertextDecryptionEngine`) on one of the LWE
 /// ciphertexts contained in the Lev ciphertext.
 pub trait GswCiphertextEntity: AbstractEntity<Kind = GswCiphertextKind> {
     /// The distribution of the key the ciphertext was encrypted with.

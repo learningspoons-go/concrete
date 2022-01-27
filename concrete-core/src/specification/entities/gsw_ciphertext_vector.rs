@@ -12,7 +12,7 @@ use concrete_commons::parameters::{
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`GswCiphertextEntity`)
+/// cf [`here`](`crate::specification::entities::GswCiphertextEntity`)
 pub trait GswCiphertextVectorEntity: AbstractEntity<Kind = GswCiphertextVectorKind> {
     /// The distribution of the key the ciphertext was encrypted with.
     type KeyDistribution: KeyDistributionMarker;

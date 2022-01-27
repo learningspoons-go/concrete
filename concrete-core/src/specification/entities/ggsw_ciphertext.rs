@@ -15,7 +15,7 @@ use concrete_commons::parameters::{
 /// # GGSW Ciphertext
 ///
 /// A GGSW ciphretext is an encryption of a polynomial plaintext.
-/// It is a vector of [`GLWE ciphertexts`](`GlweCiphertextEntity`).
+/// It is a vector of [`GLWE ciphertexts`](`crate::specification::entities::GlweCiphertextEntity`).
 /// It is a generalization of both GSW ciphertexts and RGSW ciphertexts.
 ///
 /// We call $q$ the ciphertext modulus.
@@ -42,7 +42,8 @@ use concrete_commons::parameters::{
 /// decomposition base.
 ///
 /// ## Secret Key
-/// A GGSW ciphertext is encrypted under a [`GLWE secret key`](`GlweSecretKeyEntity`).
+/// A GGSW ciphertext is encrypted under a [`GLWE secret
+/// key`](`crate::specification::entities::GlweSecretKeyEntity`).
 ///
 /// ## GGSW Encryption
 /// ###### inputs:
@@ -108,8 +109,9 @@ use concrete_commons::parameters::{
 /// \frac{q}{\beta^{i+1}}$ as described in [Encoding with the
 /// MSB](Encoding.md##Encoding%20with%20the%20MSB)).
 ///
-/// This type of ciphertext contains redundancy ($\ell$ [`GLWE ciphertext`](`GlweCiphertextEntity`),
-/// each encrypting the same plaintext times a different scaling factor).
+/// This type of ciphertext contains redundancy ($\ell$ [`GLWE
+/// ciphertext`](`crate::specification::entities::GlweCiphertextEntity`), each encrypting the same
+/// plaintext times a different scaling factor).
 ///
 /// ## Decomposition base
 /// A GLev ciphertext is parametrized with a decomposition base $\beta$, generally chosen as a power
@@ -119,12 +121,14 @@ use concrete_commons::parameters::{
 /// A GLev ciphertext contains a number of levels $\ell$ from level $0$ to level $\ell-1$.
 ///
 /// ## Secret Key
-/// A GLev ciphertext is encrypted under an [`GLWE secret key`](`GlweSecretKeyEntity`).
+/// A GLev ciphertext is encrypted under an [`GLWE secret
+/// key`](`crate::specification::entities::GlweSecretKeyEntity`).
 ///
 /// ## GLev Encryption
 /// ###### inputs:
 /// - $\mathsf{PT}\in \mathcal{R}_q$: a polynomial plaintext
-/// - $\vec{S}\in  \mathcal{R}_q^k$: a [`GLWE Secret Key`](`GlweSecretKeyEntity`)
+/// - $\vec{S}\in  \mathcal{R}_q^k$: a [`GLWE Secret
+///   Key`](`crate::specification::entities::GlweSecretKeyEntity`)
 /// - $\mathcal{D_{\sigma^2,\mu}}$: a normal distribution of variance $\sigma^2$ and a mean of $\mu$
 /// - $\ell$: number of levels desired
 /// - $\beta$: decomposition base
@@ -144,7 +148,8 @@ use concrete_commons::parameters::{
 /// \right)$
 ///
 /// ## GLev Decryption
-/// Simply use the [`GLWE decryption algorithm`](`GlweCiphertextDecryptionEngine`) on one of the
+/// Simply use the [`GLWE decryption algorithm`]
+/// (`crate::specification::engines::GlweCiphertextDecryptionEngine`) on one of the
 /// GLWE ciphertexts contained in the GLev ciphertext.
 pub trait GgswCiphertextEntity: AbstractEntity<Kind = GgswCiphertextKind> {
     /// The distribution of the key the ciphertext was encrypted with.

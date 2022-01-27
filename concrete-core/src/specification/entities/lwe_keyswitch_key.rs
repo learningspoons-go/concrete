@@ -16,9 +16,10 @@ use concrete_commons::parameters::{DecompositionBaseLog, DecompositionLevelCount
 /// ## Key Switching Key
 ///
 /// A key switching key is a vector of Lev ciphertexts (described on the bottom of [`this
-/// page`](`GswCiphertextEntity`)). It encrypts the coefficient of the [`LWE secret
-/// key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{in}}$ under the [`LWE secret
-/// key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{out}}$.
+/// page`](`crate::specification::entities::GswCiphertextEntity`)). It encrypts the coefficient of
+/// the [`LWE secret key`](`crate::specification::entities::LweSecretKeyEntity`)
+/// $\vec{s}_{\mathsf{in}}$ under the [`LWE secret key`](`crate::specification::entities::
+/// LweSecretKeyEntity`) $\vec{s}_{\mathsf{out}}$.
 ///
 /// $$\mathsf{KSK}_{\vec{s}_{\mathsf{in}}\rightarrow \vec{s}_{\mathsf{out}}} = \left(
 /// \overline{\mathsf{ct}_0}, \cdots , \overline{\mathsf{ct}_{n_{\mathsf{in}}-1}}\right) \subseteq

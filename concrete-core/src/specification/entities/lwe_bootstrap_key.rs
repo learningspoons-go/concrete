@@ -16,10 +16,12 @@ use concrete_commons::parameters::{
 /// # Formal Definition
 ///
 /// ## Bootstrapping Key
-/// A bootstrapping key is a vector of [`GGSW ciphertexts`](`GgswCiphertextEntity`).
-/// It encrypts the coefficients of the [`LWE secret key`](`LweSecretKeyEntity`)
+/// A bootstrapping key is a vector of [`GGSW
+/// ciphertexts`](`crate::specification::entities::GgswCiphertextEntity`). It encrypts the
+/// coefficients of the [`LWE secret key`](`crate::specification::entities::LweSecretKeyEntity`)
 /// $\vec{s}_{\mathsf{in}}$ under the
-/// [GLWE secret key](`GlweSecretKeyEntity`) $\vec{S}_{\mathsf{out}}$.
+/// [GLWE secret key](`crate::specification::entities::GlweSecretKeyEntity`)
+/// $\vec{S}_{\mathsf{out}}$.
 ///
 /// $$\mathsf{BSK}_{\vec{s}_{\mathsf{in}}\rightarrow \vec{S}_{\mathsf{out}}} = \left(
 /// \overline{\overline{\mathsf{CT}_0}}, \cdots ,

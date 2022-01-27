@@ -25,7 +25,7 @@ impl<EngineError: std::error::Error> LweSecretKeyCreationError<EngineError> {
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`LweSecretKeyEntity`)
+/// cf [`here`](`crate::specification::entities::LweSecretKeyEntity`)
 pub trait LweSecretKeyCreationEngine<SecretKey>: AbstractEngine
 where
     SecretKey: LweSecretKeyEntity,

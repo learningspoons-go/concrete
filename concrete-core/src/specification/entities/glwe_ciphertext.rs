@@ -18,7 +18,8 @@ use concrete_commons::parameters::{GlweDimension, PolynomialSize};
 ///
 /// A GLWE ciphretext is an encryption of a polynomial plaintext.
 /// It is secure under the hardness assumption called General Learning With Errors (GLWE).
-/// It is a generalization of both [`LWE ciphertexts`](`LweCiphertextEntity`) and RLWE ciphertexts.
+/// It is a generalization of both [`LWE
+/// ciphertexts`](`crate::specification::entities::LweCiphertextEntity`) and RLWE ciphertexts.
 /// GLWE requires a cyclotomic ring.
 /// We use the notation $\mathcal{R}_q$ for the following cyclotomic ring:
 /// $\mathbb{Z}_q[X]/\left\langle X^N + 1\right\rangle$ where $N\in\mathbb{N}$ is a power of two.
