@@ -41,7 +41,9 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingAdditionError<Engine
 /// It is a specification of the GLWE homomorphic addition described below.
 ///
 /// ## GLWE homomorphic addition
-/// [`GLWE ciphertexts`](`GlweCiphertextEntity`) are homomorphic with respect to the addition.
+/// [`GLWE ciphertexts`](`crate::specification::entities::GlweCiphertextEntity`) are homomorphic
+/// with
+/// respect to the addition.
 /// Let two GLWE ciphertexts
 /// $$
 /// \begin{cases}
@@ -49,8 +51,8 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingAdditionError<Engine
 /// \right) \subseteq \mathcal{R}_q^{k+1} \\ \mathsf{CT}_2 = \left( \vec{A}_2, B_2\right) \in
 /// \mathsf{GLWE}_{\vec{S}} \left( \mathsf{PT}_2 \right) \subseteq \mathcal{R}_q^{k+1} \end{cases}
 /// $$
-/// encrypted under the same [`GLWE secret key`](`GlweSecretKeyEntity`) $\vec{S}
-/// \in \mathcal{R}_q^k$.
+/// encrypted under the same [`GLWE secret
+/// key`](`crate::specification::entities::GlweSecretKeyEntity`) $\vec{S} \in \mathcal{R}_q^k$.
 /// We can add these ciphertexts homomorhically and obtain as a result a new GLWE ciphertext
 /// encrypting the sum of the two plaintexts $\mathsf{PT}_1 + \mathsf{PT}_2$.
 ///

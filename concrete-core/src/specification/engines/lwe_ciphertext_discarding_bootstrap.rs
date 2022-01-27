@@ -60,7 +60,8 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingBootstrapError<Engin
 ///
 /// This homomorphic procedure allows to both reduce the noise of a ciphertext and to evaluate a
 /// Look-Up Table (LUT) on the encrypted plaintext at the same time, i.e., it transforms an input
-/// [`LWE ciphertext`](`LweCiphertextEntity`) $\mathsf{ct}_{\mathsf{in}} = \left(
+/// [`LWE ciphertext`](`crate::specification::entities::LweCiphertextEntity`)
+/// $\mathsf{ct}_{\mathsf{in}} = \left(
 /// \vec{a}_{\mathsf{in}} , b_{\mathsf{in}}\right) \in
 /// \mathsf{LWE}^{n_{\mathsf{in}}}_{\vec{s}_{\mathsf{in}}}( \mathsf{pt} ) \subseteq
 /// \mathbb{Z}_q^{(n_{\mathsf{in}}+1)}$ into an output [`LWE
@@ -71,9 +72,10 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingBootstrapError<Engin
 /// in this latter is set to a fixed (reduced) amount. It requires a [`bootstrapping
 /// key`](`LweBootstrapKeyEntity`).
 ///
-/// The input ciphertext is encrypted under the [`LWE secret key`](`LweSecretKeyEntity`)
-/// $\vec{s}_{\mathsf{in}}$ and the output ciphertext is encrypted under the [`LWE secret
-/// key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{out}}$.
+/// The input ciphertext is encrypted under the [`LWE secret
+/// key`](`crate::specification::entities::LweSecretKeyEntity`) $\vec{s}_{\mathsf{in}}$ and the
+/// output ciphertext is encrypted under the [`LWE secret
+/// key`](`crate::specification::entities::LweSecretKeyEntity`) $\vec{s}_{\mathsf{out}}$.
 ///
 /// $$\mathsf{ct}_{\mathsf{in}} \in \mathsf{LWE}^{n_{\mathsf{in}}}_{\vec{s}_{\mathsf{in}}}(
 /// \mathsf{pt} ) ~~~~~~~~~~\mathsf{BSK}_{\vec{s}_{\mathsf{in}}\rightarrow \vec{S}_{\mathsf{out}}}$$
@@ -93,7 +95,8 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingBootstrapError<Engin
 ///
 /// ###### outputs:
 /// - $\mathsf{ct}_{\mathsf{out}} \in \mathsf{LWE}^{n_{\mathsf{out}}}_{\vec{s}_{\mathsf{out}}}
-///   \left( \mathsf{LUT(pt)} \right)$: an [`LWE ciphertext`](`LweCiphertextEntity`)
+///   \left( \mathsf{LUT(pt)} \right)$: an [`LWE
+///   ciphertext`](`crate::specification::entities::LweCiphertextEntity`)
 ///
 /// ###### algorithm:
 /// 1. Compute $\tilde{a}_i \in \mathbb{Z}_{2N_{\mathsf{out}}} \leftarrow \lfloor \frac{2

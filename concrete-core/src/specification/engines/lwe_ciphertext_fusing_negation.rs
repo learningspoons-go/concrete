@@ -14,7 +14,7 @@ engine_error! {
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`LweCiphertextDiscardingNegationEngine`)
+/// cf [`here`](`crate::specification::engines::LweCiphertextDiscardingNegationEngine`)
 pub trait LweCiphertextFusingNegationEngine<Ciphertext>: AbstractEngine
 where
     Ciphertext: LweCiphertextEntity,

@@ -28,7 +28,8 @@ impl<EngineError: std::error::Error> GlweCiphertextVectorZeroEncryptionError<Eng
 ///
 /// # Formal Definition
 ///
-/// This generates a vector of [`GLWE encryption`](`GlweCiphertextEncryptionEngine`) of zero.
+/// This generates a vector of [`GLWE
+/// encryption`](`crate::specification::engines::GlweCiphertextEncryptionEngine`) of zero.
 pub trait GlweCiphertextVectorZeroEncryptionEngine<SecretKey, CiphertextVector>:
     AbstractEngine
 where

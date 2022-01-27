@@ -35,7 +35,7 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingEncryptionError<Engi
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`LweCiphertextEncryptionEngine`)
+/// cf [`here`](`crate::specification::engines::LweCiphertextEncryptionEngine`)
 pub trait LweCiphertextDiscardingEncryptionEngine<SecretKey, Plaintext, Ciphertext>:
     AbstractEngine
 where

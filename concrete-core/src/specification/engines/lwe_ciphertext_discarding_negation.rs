@@ -40,12 +40,13 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingNegationError<Engine
 ///
 /// ## GLWE negation
 ///
-/// It is easy to compute the opposite of a [`GLWE ciphertext`](`GlweCiphertextEntity`), i.e., a
-/// GLWE ciphertext encrypting the opposite of the encrypted plaintext. Let a GLWE ciphertext
-/// $$
+/// It is easy to compute the opposite of a [`GLWE
+/// ciphertext`](`crate::specification::entities::GlweCiphertextEntity`), i.e., a GLWE ciphertext
+/// encrypting the opposite of the encrypted plaintext. Let a GLWE ciphertext $$
 /// \mathsf{CT} = \left( \vec{A}, B\right) \in \mathsf{GLWE}_{\vec{S}} \left( \mathsf{PT} \right)
 /// \subseteq \mathcal{R}_q^{k+1} $$
-/// encrypted under the [`GLWE secret key`](`GlweSecretKeyEntity`) $\vec{S} \in \mathcal{R}_q^k$.
+/// encrypted under the [`GLWE secret key`](`crate::specification::entities::GlweSecretKeyEntity`)
+/// $\vec{S} \in \mathcal{R}_q^k$.
 /// We can compute the opposite of this GLWE ciphertext and obtain as a result a new GLWE ciphertext
 /// encrypting the opposite of the plaintext $- \mathsf{PT}$.
 ///

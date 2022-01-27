@@ -16,7 +16,8 @@ engine_error! {
 ///
 /// # Formal Definition
 ///
-/// This generates a [`GLWE encryption`](`GlweCiphertextEncryptionEngine`) of zero.
+/// This generates a [`GLWE
+/// encryption`](`crate::specification::engines::GlweCiphertextEncryptionEngine`) of zero.
 pub trait GlweCiphertextZeroEncryptionEngine<SecretKey, Ciphertext>: AbstractEngine
 where
     SecretKey: GlweSecretKeyEntity,

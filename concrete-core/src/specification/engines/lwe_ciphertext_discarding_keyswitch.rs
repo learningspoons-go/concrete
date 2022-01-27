@@ -45,17 +45,20 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingKeyswitchError<Engin
 ///
 /// ## LWE Keyswitch
 ///
-/// This homomorphic procedure transforms an input [`LWE ciphertext`](`LweCiphertextEntity`)
-/// $\mathsf{ct}_{\mathsf{in}} = \left( \vec{a}_{\mathsf{in}} , b_{\mathsf{in}}\right) \in
-/// \mathsf{LWE}^{n_{\mathsf{in}}}_{\vec{s}_{\mathsf{in}}}( \mathsf{pt} ) \subseteq
-/// \mathbb{Z}_q^{(n_{\mathsf{in}}+1)}$ into an output [`LWE
-/// ciphertext`](`LweCiphertextEntity`)$\mathsf{ct}_{\mathsf{out}} = \left( \vec{a}_{\mathsf{out}} ,
-/// b_{\mathsf{out}}\right) \in \mathsf{LWE}^{n_{\mathsf{out}}}_{\vec{s}_{\mathsf{out}}}(
-/// \mathsf{pt} )\subseteq \mathbb{Z}_q^{(n_{\mathsf{out}}+1)}$ where $n_{\mathsf{in}} =
-/// |\vec{s}_{\mathsf{in}}|$ and $n_{\mathsf{out}} = |\vec{s}_{\mathsf{out}}|$. It requires a [`key
+/// This homomorphic procedure transforms an input [`LWE
+/// ciphertext`](`crate::specification::entities::LweCiphertextEntity`) $\mathsf{ct}_{\mathsf{in}} =
+/// \left( \vec{a}_{\mathsf{in}} , b_{\mathsf{in}}\right) \in \mathsf{LWE}^{n_{\mathsf{in}}}_{\
+/// vec{s}_{\mathsf{in}}}( \mathsf{pt} ) \subseteq \mathbb{Z}_q^{(n_{\mathsf{in}}+1)}$ into an
+/// output [`LWE
+/// ciphertext`](`crate::specification::entities::LweCiphertextEntity`)$\mathsf{ct}_{\mathsf{out}} =
+/// \left( \vec{a}_{\mathsf{out}} , b_{\mathsf{out}}\right) \in
+/// \mathsf{LWE}^{n_{\mathsf{out}}}_{\vec{s}_{\mathsf{out}}}( \mathsf{pt} )\subseteq
+/// \mathbb{Z}_q^{(n_{\mathsf{out}}+1)}$ where $n_{\mathsf{in}} = |\vec{s}_{\mathsf{in}}|$ and
+/// $n_{\mathsf{out}} = |\vec{s}_{\mathsf{out}}|$. It requires a [`key
 /// switching key`](`LweKeyswitchKeyEntity`). The input ciphertext is encrypted under the [`LWE
 /// secret key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{in}}$ and the output ciphertext is
-/// encrypted under the [`LWE secret key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{out}}$.
+/// encrypted under the [`LWE secret key`](`crate::specification::entities::LweSecretKeyEntity`)
+/// $\vec{s}_{\mathsf{out}}$.
 ///
 /// $$\mathsf{ct}_{\mathsf{in}} \in \mathsf{LWE}^{n_{\mathsf{in}}}_{\vec{s}_{\mathsf{in}}}(
 /// \mathsf{pt} ) ~~~~~~~~~~\mathsf{KSK}_{\vec{s}_{\mathsf{in}}\rightarrow \vec{s}_{\mathsf{out}}}$$
@@ -70,11 +73,12 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingKeyswitchError<Engin
 ///   ciphertext`](`LweCiphertextEntity`) with $\vec{a}_{\mathsf{in}}=\left(a_0, \cdots
 ///   a_{n_{\mathsf{in}}-1}\right)$
 /// - $\mathsf{KSK}_{\vec{s}_{\mathsf{in}}\rightarrow \vec{s}_{\mathsf{out}}}$: a [`key switching
-///   key`](`LweKeyswitchKeyEntity`)
+///   key`](`crate::specification::entities::LweKeyswitchKeyEntity`)
 ///
 /// ###### outputs:
 /// - $\mathsf{ct}_{\mathsf{out}} \in \mathsf{LWE}^{n_{\mathsf{out}}}_{\vec{s}_{\mathsf{out}}}
-///   \left( \mathsf{pt} \right)$: an [`LWE ciphertext`](`LweCiphertextEntity`)
+///   \left( \mathsf{pt} \right)$: an [`LWE
+///   ciphertext`](`crate::specification::entities::LweCiphertextEntity`)
 ///
 /// ###### algorithm:
 /// 1. set $\mathsf{ct}=\left( 0 , \cdots , 0 ,  b_{\mathsf{in}} \right) \in

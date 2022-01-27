@@ -40,7 +40,8 @@ impl<EngineError: std::error::Error>
 /// It is a specification of the GLWE product with a plaintext described below.
 ///
 /// ## GLWE product with plaintext
-/// [`GLWE ciphertexts`](`GlweCiphertextEntity`) are homomorphic with respect to the addition.
+/// [`GLWE ciphertexts`](`crate::specification::entities::GlweCiphertextEntity`) are homomorphic
+/// with respect to the addition.
 /// By generalization of this property, they are also homomorphic with respect to the product with a
 /// plaintext.
 ///
@@ -48,7 +49,8 @@ impl<EngineError: std::error::Error>
 /// $$
 /// \mathsf{CT} = \left( \vec{A}, B\right) \in \mathsf{GLWE}_{\vec{S}} \left( \mathsf{PT} \right)
 /// \subseteq \mathcal{R}_q^{k+1} $$
-/// encrypted under the [`GLWE secret key`](`GlweSecretKeyEntity`) $\vec{S} \in \mathcal{R}_q^k$.
+/// encrypted under the [`GLWE secret key`](`crate::specification::entities::GlweSecretKeyEntity`)
+/// $\vec{S} \in \mathcal{R}_q^k$.
 /// Let a clear plaintext
 /// $$
 /// \mathsf{PT}' \in \mathcal{R}.

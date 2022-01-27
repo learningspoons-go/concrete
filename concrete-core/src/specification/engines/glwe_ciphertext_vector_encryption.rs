@@ -37,7 +37,7 @@ impl<EngineError: std::error::Error> GlweCiphertextVectorEncryptionError<EngineE
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`GlweCiphertextEncryptionEngine`)
+/// cf [`here`](`crate::specification::engines::GlweCiphertextEncryptionEngine`)
 pub trait GlweCiphertextVectorEncryptionEngine<SecretKey, PlaintextVector, CiphertextVector>:
     AbstractEngine
 where

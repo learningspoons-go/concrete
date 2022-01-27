@@ -42,7 +42,7 @@ impl<EngineError: std::error::Error> LweBootstrapKeyCreationError<EngineError> {
 ///
 /// # Formal Definition
 ///
-/// cf [`here`](`LweBootstrapKeyEntity`)
+/// cf [`here`](`crate::specification::entities::LweBootstrapKeyEntity`)
 pub trait LweBootstrapKeyCreationEngine<LweSecretKey, GlweSecretKey, BootstrapKey>:
     AbstractEngine
 where
