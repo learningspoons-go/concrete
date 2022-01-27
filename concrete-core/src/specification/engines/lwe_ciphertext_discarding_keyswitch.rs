@@ -42,6 +42,45 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingKeyswitchError<Engin
 /// the keyswitch of the `input` LWE ciphertext, using the `ksk` LWE keyswitch key.
 ///
 /// # Formal Definition
+///
+/// ## LWE Keyswitch
+///
+/// This homomorphic procedure transforms an input [`LWE ciphertext`](`LweCiphertextEntity`)
+/// $\mathsf{ct}_{\mathsf{in}} = \left( \vec{a}_{\mathsf{in}} , b_{\mathsf{in}}\right) \in
+/// \mathsf{LWE}^{n_{\mathsf{in}}}_{\vec{s}_{\mathsf{in}}}( \mathsf{pt} ) \subseteq
+/// \mathbb{Z}_q^{(n_{\mathsf{in}}+1)}$ into an output [`LWE
+/// ciphertext`](`LweCiphertextEntity`)$\mathsf{ct}_{\mathsf{out}} = \left( \vec{a}_{\mathsf{out}} ,
+/// b_{\mathsf{out}}\right) \in \mathsf{LWE}^{n_{\mathsf{out}}}_{\vec{s}_{\mathsf{out}}}(
+/// \mathsf{pt} )\subseteq \mathbb{Z}_q^{(n_{\mathsf{out}}+1)}$ where $n_{\mathsf{in}} =
+/// |\vec{s}_{\mathsf{in}}|$ and $n_{\mathsf{out}} = |\vec{s}_{\mathsf{out}}|$. It requires a [`key
+/// switching key`](`LweKeyswitchKeyEntity`). The input ciphertext is encrypted under the [`LWE
+/// secret key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{in}}$ and the output ciphertext is
+/// encrypted under the [`LWE secret key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{out}}$.
+///
+/// $$\mathsf{ct}_{\mathsf{in}} \in \mathsf{LWE}^{n_{\mathsf{in}}}_{\vec{s}_{\mathsf{in}}}(
+/// \mathsf{pt} ) ~~~~~~~~~~\mathsf{KSK}_{\vec{s}_{\mathsf{in}}\rightarrow \vec{s}_{\mathsf{out}}}$$
+/// $$ \mathsf{keyswitch}\left(\mathsf{ct}_{\mathsf{in}} , \mathsf{KSK} \right) \rightarrow
+/// \mathsf{ct}_{\mathsf{out}} \in \mathsf{LWE}^{n_{\mathsf{out}}}_{\vec{s}_{\mathsf{out}}} \left(
+/// \mathsf{pt} \right)$$
+///
+/// ## Algorithm
+/// ###### inputs:
+/// - $\mathsf{ct}_{\mathsf{in}} = \left( \vec{a}_{\mathsf{in}} , b_{\mathsf{in}}\right) \in
+///   \mathsf{LWE}^{n_{\mathsf{in}}}_{\vec{s}_{\mathsf{in}}}( \mathsf{pt} )$: an [`LWE
+///   ciphertext`](`LweCiphertextEntity`) with $\vec{a}_{\mathsf{in}}=\left(a_0, \cdots
+///   a_{n_{\mathsf{in}}-1}\right)$
+/// - $\mathsf{KSK}_{\vec{s}_{\mathsf{in}}\rightarrow \vec{s}_{\mathsf{out}}}$: a [`key switching
+///   key`](`LweKeyswitchKeyEntity`)
+///
+/// ###### outputs:
+/// - $\mathsf{ct}_{\mathsf{out}} \in \mathsf{LWE}^{n_{\mathsf{out}}}_{\vec{s}_{\mathsf{out}}}
+///   \left( \mathsf{pt} \right)$: an [`LWE ciphertext`](`LweCiphertextEntity`)
+///
+/// ###### algorithm:
+/// 1. set $\mathsf{ct}=\left( 0 , \cdots , 0 ,  b_{\mathsf{in}} \right) \in
+/// \mathbb{Z}_q^{(n_{\mathsf{out}}+1)}$ 2. compute $\mathsf{ct}_{\mathsf{out}} = \mathsf{ct} -
+/// \sum_{i=0}^{n_{\mathsf{in}}-1} \mathsf{decompProduct}\left( a_i , \overline{\mathsf{ct}_i}
+/// \right)$ 3. output $\mathsf{ct}_{\mathsf{out}}$
 pub trait LweCiphertextDiscardingKeyswitchEngine<KeyswitchKey, InputCiphertext, OutputCiphertext>:
     AbstractEngine
 where

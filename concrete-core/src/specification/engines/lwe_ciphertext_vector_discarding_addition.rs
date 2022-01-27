@@ -43,6 +43,8 @@ impl<EngineError: std::error::Error> LweCiphertextVectorDiscardingAdditionError<
 /// ciphertext vector.
 ///
 /// # Formal Definition
+///
+/// cf [`here`](`LweCiphertextDiscardingAdditionEngine`)
 pub trait LweCiphertextVectorDiscardingAdditionEngine<InputCiphertextVector, OutputCiphertextVector>:
     AbstractEngine
 where

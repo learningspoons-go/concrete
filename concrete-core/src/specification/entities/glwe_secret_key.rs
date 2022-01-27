@@ -9,6 +9,14 @@ use concrete_commons::parameters::{GlweDimension, PolynomialSize};
 /// distribution.
 ///
 /// # Formal Definition
+///
+/// ## GLWE Secret Key
+///
+/// We consider a secret key:
+/// $$\vec{S} =\left( S_0, \ldots, S_{k-1}\right) \in \mathcal{R}^{k}$$
+/// The $k$ polynomials composing $\vec{S}$ contain each $N$ integers coefficients that have been
+/// sampled from some distribution which is either uniformly binary, uniformly ternary, gaussian or
+/// even uniform.
 pub trait GlweSecretKeyEntity: AbstractEntity<Kind = GlweSecretKeyKind> {
     /// The distribution of this key.
     type KeyDistribution: KeyDistributionMarker;

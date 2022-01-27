@@ -35,6 +35,39 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingAdditionError<Engine
 /// the addition of the `input_1` LWE ciphertext and the `input_2` LWE ciphertext.
 ///
 /// # Formal Definition
+///
+/// ## LWE homomorphic addition
+///
+/// It is a specification of the GLWE homomorphic addition described below.
+///
+/// ## GLWE homomorphic addition
+/// [`GLWE ciphertexts`](`GlweCiphertextEntity`) are homomorphic with respect to the addition.
+/// Let two GLWE ciphertexts
+/// $$
+/// \begin{cases}
+/// \mathsf{CT}_1 = \left( \vec{A}_1, B_1\right) \in \mathsf{GLWE}_{\vec{S}} \left( \mathsf{PT}_1
+/// \right) \subseteq \mathcal{R}_q^{k+1} \\ \mathsf{CT}_2 = \left( \vec{A}_2, B_2\right) \in
+/// \mathsf{GLWE}_{\vec{S}} \left( \mathsf{PT}_2 \right) \subseteq \mathcal{R}_q^{k+1} \end{cases}
+/// $$
+/// encrypted under the same [`GLWE secret key`](`GlweSecretKeyEntity`) $\vec{S}
+/// \in \mathcal{R}_q^k$.
+/// We can add these ciphertexts homomorhically and obtain as a result a new GLWE ciphertext
+/// encrypting the sum of the two plaintexts $\mathsf{PT}_1 + \mathsf{PT}_2$.
+///
+/// ###### inputs:
+/// - $\mathsf{CT}_1 = \left( \vec{A}_1, B_1\right) \in \mathsf{GLWE}_{\vec{S}} \left( \mathsf{PT}_1
+///   \right) \subseteq \mathcal{R}_q^{k+1}$: a GLWE ciphertext
+/// - $\mathsf{CT}_2 = \left( \vec{A}_2, B_2\right) \in \mathsf{GLWE}_{\vec{S}} \left( \mathsf{PT}_2
+///   \right) \subseteq \mathcal{R}_q^{k+1}$: a GLWE ciphertext
+///
+/// ###### outputs:
+/// - $\mathsf{CT} = \left( \vec{A} , B \right) \in \mathsf{GLWE}_{\vec{S}}( \mathsf{PT}_1 +
+///   \mathsf{PT}_2 )\subseteq \mathcal{R}_q^{k+1}$: an GLWE ciphertext
+///
+/// ###### algorithm:
+/// 1. Compute $\vec{A} = \vec{A}_1 + \vec{A}_2 \in\mathcal{R}^k_q$
+/// 2. Compute $B = B_1 + B_2 \in\mathcal{R}_q$
+/// 3. Output $\left( \vec{A} , B \right)$
 pub trait LweCiphertextDiscardingAdditionEngine<InputCiphertext, OutputCiphertext>:
     AbstractEngine
 where

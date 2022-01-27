@@ -13,6 +13,8 @@ engine_error! {
 /// This [fusing](super#operation-semantics) operation negates the `input` LWE ciphertext vector.
 ///
 ///  # Formal Definition
+///
+/// cf [`here`](`LweCiphertextDiscardingNegationEngine`)
 pub trait LweCiphertextVectorFusingNegationEngine<CiphertextVector>: AbstractEngine
 where
     CiphertextVector: LweCiphertextVectorEntity,

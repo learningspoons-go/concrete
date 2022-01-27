@@ -12,6 +12,21 @@ use concrete_commons::parameters::{DecompositionBaseLog, DecompositionLevelCount
 /// distribution of the output secret key.
 ///
 /// # Formal Definition
+///
+/// ## Key Switching Key
+///
+/// A key switching key is a vector of Lev ciphertexts (described on the bottom of [`this
+/// page`](`GswCiphertextEntity`)). It encrypts the coefficient of the [`LWE secret
+/// key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{in}}$ under the [`LWE secret
+/// key`](`LweSecretKeyEntity`) $\vec{s}_{\mathsf{out}}$.
+///
+/// $$\mathsf{KSK}_{\vec{s}_{\mathsf{in}}\rightarrow \vec{s}_{\mathsf{out}}} = \left(
+/// \overline{\mathsf{ct}_0}, \cdots , \overline{\mathsf{ct}_{n_{\mathsf{in}}-1}}\right) \subseteq
+/// \mathbb{Z}_q^{(n_{\mathsf{out}}+1)\cdot n_{\mathsf{in}}}$$
+///
+/// where $\vec{s}_{\mathsf{in}} = \left( s_0 , \cdots , s_{\mathsf{in}-1} \right)$ and for all
+/// $0\le i <n_{\mathsf{in}}$ we have $\overline{\mathsf{ct}_i} \in
+/// \mathsf{Lev}_{\vec{s}_{\mathsf{out}}}^{\beta, \ell}\left(s_i\right)$.
 pub trait LweKeyswitchKeyEntity: AbstractEntity<Kind = LweKeyswitchKeyKind> {
     /// The distribution of the key the input ciphertext is encrypted with.
     type InputKeyDistribution: KeyDistributionMarker;

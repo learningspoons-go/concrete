@@ -24,6 +24,8 @@ impl<EngineError: std::error::Error> LweSecretKeyCreationError<EngineError> {
 /// This [pure](super#operation-semantics) operation creates a fresh LWE secret key.
 ///
 /// # Formal Definition
+///
+/// cf [`here`](`LweSecretKeyEntity`)
 pub trait LweSecretKeyCreationEngine<SecretKey>: AbstractEngine
 where
     SecretKey: LweSecretKeyEntity,

@@ -14,6 +14,8 @@ engine_error! {
 /// the `input` cleartext.
 ///
 /// # Formal Definition
+///
+/// cf [`here`](`LweCiphertextCleartextDiscardingMultiplicationEngine`)
 pub trait LweCiphertextCleartextFusingMultiplicationEngine<Ciphertext, Cleartext>:
     AbstractEngine
 where

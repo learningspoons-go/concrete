@@ -27,6 +27,8 @@ impl<EngineError: std::error::Error> LweCiphertextVectorZeroEncryptionError<Engi
 /// encryptions of zeros, under the `key` secret key.
 ///
 /// # Formal Definition
+///
+/// This generates a vector of [`LWE encryption`](`LweCiphertextEncryptionEngine`) of zero.
 pub trait LweCiphertextVectorZeroEncryptionEngine<SecretKey, CiphertextVector>:
     AbstractEngine
 where

@@ -38,6 +38,8 @@ impl<EngineError: std::error::Error> LweCiphertextVectorDiscardingNegationError<
 /// with the element-wise negation of the `input` LWE ciphertext vector.
 ///
 /// # Formal Definition
+///
+/// cf [`here`](`LweCiphertextDiscardingNegationEngine`)
 pub trait LweCiphertextVectorDiscardingNegationEngine<InputCiphertextVector, OutputCiphertextVector>:
     AbstractEngine
 where

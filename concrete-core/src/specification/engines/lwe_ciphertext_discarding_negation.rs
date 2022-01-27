@@ -33,6 +33,34 @@ impl<EngineError: std::error::Error> LweCiphertextDiscardingNegationError<Engine
 /// the negation of the `input` LWE ciphertext.
 ///
 /// # Formal Definition
+///
+/// ## LWE negation
+///
+/// It is a specification of the GLWE negation described below.
+///
+/// ## GLWE negation
+///
+/// It is easy to compute the opposite of a [`GLWE ciphertext`](`GlweCiphertextEntity`), i.e., a
+/// GLWE ciphertext encrypting the opposite of the encrypted plaintext. Let a GLWE ciphertext
+/// $$
+/// \mathsf{CT} = \left( \vec{A}, B\right) \in \mathsf{GLWE}_{\vec{S}} \left( \mathsf{PT} \right)
+/// \subseteq \mathcal{R}_q^{k+1} $$
+/// encrypted under the [`GLWE secret key`](`GlweSecretKeyEntity`) $\vec{S} \in \mathcal{R}_q^k$.
+/// We can compute the opposite of this GLWE ciphertext and obtain as a result a new GLWE ciphertext
+/// encrypting the opposite of the plaintext $- \mathsf{PT}$.
+///
+/// ###### inputs:
+/// - $\mathsf{CT} = \left( \vec{A}, B\right) \in \mathsf{GLWE}_{\vec{S}} \left( \mathsf{PT} \right)
+///   \subseteq \mathcal{R}_q^{k+1}$: a GLWE ciphertext
+///
+/// ###### outputs:
+/// - $\mathsf{CT}' = \left( \vec{A}' , B' \right) \in \mathsf{GLWE}_{\vec{S}}( -\mathsf{PT}
+///   )\subseteq \mathcal{R}_q^{k+1}$: an GLWE ciphertext
+///
+/// ###### algorithm:
+/// 1. Compute $\vec{A}' = -\vec{A} \in\mathcal{R}^k_q$
+/// 2. Compute $B' = -B \in\mathcal{R}_q$
+/// 3. Output $\left( \vec{A} , B \right)$
 pub trait LweCiphertextDiscardingNegationEngine<InputCiphertext, OutputCiphertext>:
     AbstractEngine
 where

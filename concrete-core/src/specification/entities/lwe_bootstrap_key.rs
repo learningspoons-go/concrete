@@ -14,6 +14,34 @@ use concrete_commons::parameters::{
 /// distribution of the secret key used to encrypt the bootstrap key.
 ///
 /// # Formal Definition
+///
+/// ## Bootstrapping Key
+/// A bootstrapping key is a vector of [`GGSW ciphertexts`](`GgswCiphertextEntity`).
+/// It encrypts the coefficients of the [`LWE secret key`](`LweSecretKeyEntity`)
+/// $\vec{s}_{\mathsf{in}}$ under the
+/// [GLWE secret key](`GlweSecretKeyEntity`) $\vec{S}_{\mathsf{out}}$.
+///
+/// $$\mathsf{BSK}_{\vec{s}_{\mathsf{in}}\rightarrow \vec{S}_{\mathsf{out}}} = \left(
+/// \overline{\overline{\mathsf{CT}_0}}, \cdots ,
+/// \overline{\overline{\mathsf{CT}_{n_{\mathsf{in}}-1}}}\right) \subseteq
+/// \mathbb{Z}_q^{(n_{\mathsf{out}}+1)\cdot n_{\mathsf{in}}}$$
+///
+/// where $\vec{s}_{\mathsf{in}} = \left( s_0 , \cdots , s_{\mathsf{in}-1} \right)$ and for all
+/// $0\le i <n_{\mathsf{in}}$ we have $\overline{\overline{\mathsf{CT}_i}} \in
+/// \mathsf{GGSW}_{\vec{S}_{\mathsf{out}}}^{\beta, \ell}\left(s_i\right)$.
+///
+/// **Remark:** Observe that the GGSW secret key, which is a GLWE secret key,  can be easily seen as
+/// a LWE secret key by simply taking all the coefficients of the polynomials composing the secret
+/// key and putting them into a vector in order. We will call this LWE secret key derived from the
+/// GLWE secret key **_extracted LWE key_**.
+///
+/// Let $\vec{S}_{\mathsf{out}} = (S_{\mathsf{out},0}, \ldots, S_{\mathsf{out},k_{\mathsf{out}}-1})
+/// \in \mathcal{R}^{k_{\mathsf{out}}}$, such that $S_{\mathsf{out},i} =
+/// \sum_{j=0}^{N_{\mathsf{out}}-1} s_{\mathsf{out},i, j} \cdot X^j$. Then, the extracted LWE key
+/// will be $\vec{s}_{\mathsf{out}} = (s_{\mathsf{out},0,0}, \ldots,
+/// s_{\mathsf{out},0,N_{\mathsf{out}}-1}, \ldots, s_{\mathsf{out},k_{\mathsf{out}}-1,0}, \ldots,
+/// s_{\mathsf{out},k_{\mathsf{out}}-1,N_{\mathsf{out}}-1}) \in \mathbb{Z}^{n_{\mathsf{out}}}$,
+/// where $n_{\mathsf{out}} = k_{\mathsf{out}} \cdot N_{\mathsf{out}}$.
 pub trait LweBootstrapKeyEntity: AbstractEntity<Kind = LweBootstrapKeyKind> {
     /// The distribution of key the input ciphertext is encrypted with.
     type InputKeyDistribution: KeyDistributionMarker;
