@@ -23,8 +23,10 @@ use concrete_commons::parameters::{
 /// $\mathbb{Z}_q\[X\]/\left\langle X^N + 1\right\rangle$ where $N\in\mathbb{N}$ is a
 /// power of two.
 ///
-/// We indicate a GGSW ciphertext of a polynomial plaintext $\mathsf{PT} \in\mathcal{R}_q$ as the
-/// following vector: $$\overline{\overline{\mathsf{CT}}} = \left( \overline{\mathsf{CT}_0}, \cdots
+/// We indicate a GGSW ciphertext of a polynomial plaintext $\mathsf{PT} \in\mathcal{R}_q$
+/// as the following vector:
+///
+/// $$\overline{\overline{\mathsf{CT}}} = \left( \overline{\mathsf{CT}_0}, \cdots
 /// , \overline{\mathsf{CT}_{k}} \right) \in \mathsf{GGSW}_{\vec{S}}^{\beta,
 /// \ell}\left(\mathsf{PT}\right) \subseteq \mathcal{R}_q^{(k+1)\times\ell\cdot(k+1)}$$
 ///
