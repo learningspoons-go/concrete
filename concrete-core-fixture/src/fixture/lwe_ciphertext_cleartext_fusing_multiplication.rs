@@ -124,8 +124,8 @@ where
         let proto_output_ciphertext = maker.unsynthesize_lwe_ciphertext(&ciphertext);
         let proto_output_plaintext =
             maker.decrypt_lwe_ciphertext_to_plaintext(proto_secret_key, &proto_output_ciphertext);
-        maker.destroy_lwe_ciphertext(ciphertext);
-        maker.destroy_cleartext(cleartext);
+        maker.destroy_lwe_ciphertext(&ciphertext);
+        maker.destroy_cleartext(&cleartext);
         (
             expected_mean,
             maker.transform_plaintext_to_raw(&proto_output_plaintext),

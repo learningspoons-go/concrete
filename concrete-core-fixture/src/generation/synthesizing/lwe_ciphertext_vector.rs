@@ -16,7 +16,7 @@ where
         &mut self,
         entity: &LweCiphertextVector,
     ) -> Self::LweCiphertextVectorProto;
-    fn destroy_lwe_ciphertext_vector(&mut self, entity: LweCiphertextVector);
+    fn destroy_lwe_ciphertext_vector(&mut self, entity: &LweCiphertextVector);
 }
 
 #[cfg(feature = "backend_core")]
@@ -41,7 +41,7 @@ mod backend_core {
         ) -> Self::LweCiphertextVectorProto {
             ProtoBinaryLweCiphertextVector32(entity.to_owned())
         }
-        fn destroy_lwe_ciphertext_vector(&mut self, entity: LweCiphertextVector32) {
+        fn destroy_lwe_ciphertext_vector(&mut self, entity: &LweCiphertextVector32) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -59,7 +59,7 @@ mod backend_core {
         ) -> Self::LweCiphertextVectorProto {
             ProtoBinaryLweCiphertextVector64(entity.to_owned())
         }
-        fn destroy_lwe_ciphertext_vector(&mut self, entity: LweCiphertextVector64) {
+        fn destroy_lwe_ciphertext_vector(&mut self, entity: &LweCiphertextVector64) {
             self.core_engine.destroy(entity).unwrap();
         }
     }

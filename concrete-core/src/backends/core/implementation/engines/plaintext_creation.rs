@@ -18,7 +18,7 @@ impl PlaintextCreationEngine<u32, Plaintext32> for CoreEngine {
     ///
     /// let mut engine = CoreEngine::new()?;
     /// let plaintext: Plaintext32 = engine.create_plaintext(&input)?;
-    /// engine.destroy(plaintext)?;
+    /// engine.destroy(&plaintext)?;
     /// #
     /// # Ok(())
     /// # }
@@ -50,7 +50,7 @@ impl PlaintextCreationEngine<u64, Plaintext64> for CoreEngine {
     ///
     /// let mut engine = CoreEngine::new()?;
     /// let plaintext: Plaintext64 = engine.create_plaintext(&input)?;
-    /// engine.destroy(plaintext)?;
+    /// engine.destroy(&plaintext)?;
     /// #
     /// # Ok(())
     /// # }

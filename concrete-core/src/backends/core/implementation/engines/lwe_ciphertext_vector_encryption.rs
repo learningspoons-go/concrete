@@ -45,9 +45,9 @@ impl LweCiphertextVectorEncryptionEngine<LweSecretKey32, PlaintextVector32, LweC
     /// #    LweCiphertextCount(3)
     /// # );
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(ciphertext_vector)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&ciphertext_vector)?;
     /// #
     /// # Ok(())
     /// # }
@@ -111,9 +111,9 @@ impl LweCiphertextVectorEncryptionEngine<LweSecretKey64, PlaintextVector64, LweC
     /// #     LweCiphertextCount(3)
     /// # );
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(ciphertext_vector)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&ciphertext_vector)?;
     /// #
     /// # Ok(())
     /// # }

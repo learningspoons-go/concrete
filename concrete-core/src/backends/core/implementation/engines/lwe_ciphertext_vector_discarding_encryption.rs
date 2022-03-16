@@ -52,9 +52,9 @@ impl
     /// #     LweCiphertextCount(3)
     /// # );
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(ciphertext_vector)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&ciphertext_vector)?;
     /// #
     /// # Ok(())
     /// # }
@@ -130,9 +130,9 @@ impl
     /// #     LweCiphertextCount(3)
     /// # );
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(ciphertext_vector)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&ciphertext_vector)?;
     /// #
     /// # Ok(())
     /// # }

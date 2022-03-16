@@ -49,12 +49,12 @@ impl LweCiphertextDiscardingKeyswitchEngine<LweKeyswitchKey32, LweCiphertext32, 
     /// #
     /// assert_eq!(ciphertext_2.lwe_dimension(), output_lwe_dimension);
     ///
-    /// engine.destroy(input_key)?;
-    /// engine.destroy(output_key)?;
-    /// engine.destroy(keyswitch_key)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(ciphertext_1)?;
-    /// engine.destroy(ciphertext_2)?;
+    /// engine.destroy(&input_key)?;
+    /// engine.destroy(&output_key)?;
+    /// engine.destroy(&keyswitch_key)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&ciphertext_1)?;
+    /// engine.destroy(&ciphertext_2)?;
     /// #
     /// # Ok(())
     /// # }
@@ -123,12 +123,12 @@ impl LweCiphertextDiscardingKeyswitchEngine<LweKeyswitchKey64, LweCiphertext64, 
     /// #
     /// assert_eq!(ciphertext_2.lwe_dimension(), output_lwe_dimension);
     ///
-    /// engine.destroy(input_key)?;
-    /// engine.destroy(output_key)?;
-    /// engine.destroy(keyswitch_key)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(ciphertext_1)?;
-    /// engine.destroy(ciphertext_2)?;
+    /// engine.destroy(&input_key)?;
+    /// engine.destroy(&output_key)?;
+    /// engine.destroy(&keyswitch_key)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&ciphertext_1)?;
+    /// engine.destroy(&ciphertext_2)?;
     /// #
     /// # Ok(())
     /// # }

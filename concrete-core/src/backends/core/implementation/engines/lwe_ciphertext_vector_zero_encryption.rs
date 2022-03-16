@@ -38,8 +38,8 @@ impl LweCiphertextVectorZeroEncryptionEngine<LweSecretKey32, LweCiphertextVector
     /// assert_eq!(ciphertext_vector.lwe_dimension(), lwe_dimension);
     /// assert_eq!(ciphertext_vector.lwe_ciphertext_count(), ciphertext_count);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(ciphertext_vector)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&ciphertext_vector)?;
     /// #
     /// # Ok(())
     /// # }
@@ -103,8 +103,8 @@ impl LweCiphertextVectorZeroEncryptionEngine<LweSecretKey64, LweCiphertextVector
     /// assert_eq!(ciphertext_vector.lwe_dimension(), lwe_dimension);
     /// assert_eq!(ciphertext_vector.lwe_ciphertext_count(), ciphertext_count);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(ciphertext_vector)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&ciphertext_vector)?;
     /// #
     /// # Ok(())
     /// # }

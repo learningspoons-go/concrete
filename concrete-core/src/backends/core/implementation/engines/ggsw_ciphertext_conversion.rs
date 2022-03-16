@@ -49,10 +49,10 @@ impl GgswCiphertextConversionEngine<GgswCiphertext32, FourierGgswCiphertext32> f
     /// assert_eq!(fourier_ciphertext.decomposition_base_log(), base_log);
     /// assert_eq!(fourier_ciphertext.decomposition_level_count(), level);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(ciphertext)?;
-    /// engine.destroy(fourier_ciphertext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&ciphertext)?;
+    /// engine.destroy(&fourier_ciphertext)?;
     /// #
     /// # Ok(())
     /// # }
@@ -124,10 +124,10 @@ impl GgswCiphertextConversionEngine<GgswCiphertext64, FourierGgswCiphertext64> f
     /// assert_eq!(fourier_ciphertext.decomposition_base_log(), base_log);
     /// assert_eq!(fourier_ciphertext.decomposition_level_count(), level);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(ciphertext)?;
-    /// engine.destroy(fourier_ciphertext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&ciphertext)?;
+    /// engine.destroy(&fourier_ciphertext)?;
     /// #
     /// # Ok(())
     /// # }

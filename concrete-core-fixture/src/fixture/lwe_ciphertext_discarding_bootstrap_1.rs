@@ -241,10 +241,10 @@ where
             &proto_output_lwe_secret_key,
             &proto_output_ciphertext,
         );
-        maker.destroy_lwe_ciphertext(input_ciphertext);
-        maker.destroy_lwe_ciphertext(output_ciphertext);
-        maker.destroy_lwe_bootstrap_key(bootstrap_key);
-        maker.destroy_glwe_ciphertext(accumulator);
+        maker.destroy_lwe_ciphertext(&input_ciphertext);
+        maker.destroy_lwe_ciphertext(&output_ciphertext);
+        maker.destroy_lwe_bootstrap_key(&bootstrap_key);
+        maker.destroy_glwe_ciphertext(&accumulator);
         (
             maker.transform_plaintext_to_raw(proto_plaintext),
             maker.transform_plaintext_to_raw(&proto_output_plaintext),

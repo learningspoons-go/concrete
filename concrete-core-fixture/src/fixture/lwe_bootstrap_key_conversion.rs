@@ -120,7 +120,7 @@ where
         context: Self::PostExecutionContext,
     ) -> Self::Outcome {
         let (bsk,) = context;
-        maker.destroy_lwe_bootstrap_key(bsk);
+        maker.destroy_lwe_bootstrap_key(&bsk);
         unimplemented!()
     }
 

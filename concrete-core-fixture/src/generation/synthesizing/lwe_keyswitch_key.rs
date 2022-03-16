@@ -19,7 +19,7 @@ where
         &mut self,
         entity: &LweKeyswitchKey,
     ) -> Self::LweKeyswitchKeyProto;
-    fn destroy_lwe_keyswitch_key(&mut self, entity: LweKeyswitchKey);
+    fn destroy_lwe_keyswitch_key(&mut self, entity: &LweKeyswitchKey);
 }
 
 #[cfg(feature = "backend_core")]
@@ -46,7 +46,7 @@ mod backend_core {
             ProtoBinaryBinaryLweKeyswitchKey32(entity.to_owned())
         }
 
-        fn destroy_lwe_keyswitch_key(&mut self, entity: LweKeyswitchKey32) {
+        fn destroy_lwe_keyswitch_key(&mut self, entity: &LweKeyswitchKey32) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -66,7 +66,7 @@ mod backend_core {
             ProtoBinaryBinaryLweKeyswitchKey64(entity.to_owned())
         }
 
-        fn destroy_lwe_keyswitch_key(&mut self, entity: LweKeyswitchKey64) {
+        fn destroy_lwe_keyswitch_key(&mut self, entity: &LweKeyswitchKey64) {
             self.core_engine.destroy(entity).unwrap();
         }
     }

@@ -95,7 +95,7 @@ where
     ) -> Self::Outcome {
         let (plaintext_vector, raw_output_vector) = context;
         let proto_output_plaintext = maker.unsynthesize_plaintext_vector(&plaintext_vector);
-        maker.destroy_plaintext_vector(plaintext_vector);
+        maker.destroy_plaintext_vector(&plaintext_vector);
         (
             maker.transform_plaintext_vector_to_raw_vec(&proto_output_plaintext),
             raw_output_vector,

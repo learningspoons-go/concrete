@@ -20,7 +20,7 @@ impl PlaintextRetrievalEngine<Plaintext32, u32> for CoreEngine {
     /// let output: u32 = engine.retrieve_plaintext(&plaintext)?;
     ///
     /// assert_eq!(output, 3_u32 << 20);
-    /// engine.destroy(plaintext)?;
+    /// engine.destroy(&plaintext)?;
     /// #
     /// # Ok(())
     /// # }
@@ -55,7 +55,7 @@ impl PlaintextRetrievalEngine<Plaintext64, u64> for CoreEngine {
     /// let output: u64 = engine.retrieve_plaintext(&plaintext)?;
     ///
     /// assert_eq!(output, 3_u64 << 20);
-    /// engine.destroy(plaintext)?;
+    /// engine.destroy(&plaintext)?;
     /// #
     /// # Ok(())
     /// # }

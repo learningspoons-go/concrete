@@ -53,11 +53,11 @@ impl LweCiphertextDiscardingExtractionEngine<GlweCiphertext32, LweCiphertext32> 
     /// #
     /// assert_eq!(lwe_ciphertext.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(glwe_key)?;
-    /// engine.destroy(lwe_key)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(glwe_ciphertext)?;
-    /// engine.destroy(lwe_ciphertext)?;
+    /// engine.destroy(&glwe_key)?;
+    /// engine.destroy(&lwe_key)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&glwe_ciphertext)?;
+    /// engine.destroy(&lwe_ciphertext)?;
     /// #
     /// # Ok(())
     /// # }
@@ -130,11 +130,11 @@ impl LweCiphertextDiscardingExtractionEngine<GlweCiphertext64, LweCiphertext64> 
     /// #
     /// assert_eq!(lwe_ciphertext.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(glwe_key)?;
-    /// engine.destroy(lwe_key)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(glwe_ciphertext)?;
-    /// engine.destroy(lwe_ciphertext)?;
+    /// engine.destroy(&glwe_key)?;
+    /// engine.destroy(&lwe_key)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&glwe_ciphertext)?;
+    /// engine.destroy(&lwe_ciphertext)?;
     /// #
     /// # Ok(())
     /// # }

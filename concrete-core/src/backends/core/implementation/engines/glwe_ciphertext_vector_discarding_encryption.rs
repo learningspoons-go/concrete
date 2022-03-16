@@ -57,10 +57,10 @@ impl
     /// #     GlweCiphertextCount(2)
     /// # );
     ///
-    /// engine.destroy(ciphertext_vector)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(key_1)?;
-    /// engine.destroy(key_2)?;
+    /// engine.destroy(&ciphertext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&key_1)?;
+    /// engine.destroy(&key_2)?;
     /// #
     /// # Ok(())
     /// # }
@@ -141,10 +141,10 @@ impl
     /// #     GlweCiphertextCount(2)
     /// # );
     ///
-    /// engine.destroy(ciphertext_vector)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(key_1)?;
-    /// engine.destroy(key_2)?;
+    /// engine.destroy(&ciphertext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&key_1)?;
+    /// engine.destroy(&key_2)?;
     /// #
     /// # Ok(())
     /// # }

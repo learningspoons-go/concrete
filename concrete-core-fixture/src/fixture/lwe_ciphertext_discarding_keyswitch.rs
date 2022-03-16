@@ -192,9 +192,9 @@ where
             proto_output_secret_key,
             &proto_output_ciphertext,
         );
-        maker.destroy_lwe_ciphertext(input_ciphertext);
-        maker.destroy_lwe_ciphertext(output_ciphertext);
-        maker.destroy_lwe_keyswitch_key(keyswitch_key);
+        maker.destroy_lwe_ciphertext(&input_ciphertext);
+        maker.destroy_lwe_ciphertext(&output_ciphertext);
+        maker.destroy_lwe_keyswitch_key(&keyswitch_key);
         (
             maker.transform_plaintext_to_raw(proto_plaintext),
             maker.transform_plaintext_to_raw(&proto_output_plaintext),

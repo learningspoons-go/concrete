@@ -16,7 +16,7 @@ where
         &mut self,
         entity: &GgswCiphertext,
     ) -> Self::GgswCiphertextProto;
-    fn destroy_ggsw_ciphertext(&mut self, entity: GgswCiphertext);
+    fn destroy_ggsw_ciphertext(&mut self, entity: &GgswCiphertext);
 }
 
 #[cfg(feature = "backend_core")]
@@ -44,7 +44,7 @@ mod backend_core {
             ProtoBinaryGgswCiphertext32(entity.to_owned())
         }
 
-        fn destroy_ggsw_ciphertext(&mut self, entity: GgswCiphertext32) {
+        fn destroy_ggsw_ciphertext(&mut self, entity: &GgswCiphertext32) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -64,7 +64,7 @@ mod backend_core {
             ProtoBinaryGgswCiphertext64(entity.to_owned())
         }
 
-        fn destroy_ggsw_ciphertext(&mut self, entity: GgswCiphertext64) {
+        fn destroy_ggsw_ciphertext(&mut self, entity: &GgswCiphertext64) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -87,7 +87,7 @@ mod backend_core {
             unimplemented!("The backward fourier conversion was not yet implemented");
         }
 
-        fn destroy_ggsw_ciphertext(&mut self, entity: FourierGgswCiphertext32) {
+        fn destroy_ggsw_ciphertext(&mut self, entity: &FourierGgswCiphertext32) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -110,7 +110,7 @@ mod backend_core {
             unimplemented!("The backward fourier conversion was not yet implemented");
         }
 
-        fn destroy_ggsw_ciphertext(&mut self, entity: FourierGgswCiphertext64) {
+        fn destroy_ggsw_ciphertext(&mut self, entity: &FourierGgswCiphertext64) {
             self.core_engine.destroy(entity).unwrap();
         }
     }

@@ -124,8 +124,8 @@ where
                 proto_secret_key,
                 &proto_output_ciphertext_vector,
             );
-        maker.destroy_glwe_secret_key(secret_key);
-        maker.destroy_glwe_ciphertext_vector(ciphertext_vector);
+        maker.destroy_glwe_secret_key(&secret_key);
+        maker.destroy_glwe_ciphertext_vector(&ciphertext_vector);
         (
             Precision::Raw::zero_vec(parameters.polynomial_size.0 * parameters.count.0),
             maker.transform_plaintext_vector_to_raw_vec(&proto_output_plaintext_vector),

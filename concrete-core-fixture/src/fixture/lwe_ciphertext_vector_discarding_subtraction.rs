@@ -212,9 +212,9 @@ where
                 proto_secret_key,
                 &proto_output_ciphertext_vector,
             );
-        maker.destroy_lwe_ciphertext_vector(input_ciphertext_vector1);
-        maker.destroy_lwe_ciphertext_vector(input_ciphertext_vector2);
-        maker.destroy_lwe_ciphertext_vector(output_ciphertext_vector);
+        maker.destroy_lwe_ciphertext_vector(&input_ciphertext_vector1);
+        maker.destroy_lwe_ciphertext_vector(&input_ciphertext_vector2);
+        maker.destroy_lwe_ciphertext_vector(&output_ciphertext_vector);
         (
             predicted_output,
             maker.transform_plaintext_vector_to_raw_vec(&proto_output_plaintext_vector),

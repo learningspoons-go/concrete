@@ -79,7 +79,8 @@ where
         context: Self::PreExecutionContext,
     ) -> Self::PostExecutionContext {
         let (sk_in,) = context;
-        let sk_out = unsafe { engine.transmute_glwe_secret_key_to_lwe_secret_key_unchecked(sk_in) };
+        let sk_out =
+            unsafe { engine.transmute_glwe_secret_key_to_lwe_secret_key_unchecked(&sk_in) };
         (sk_out,)
     }
 
@@ -91,7 +92,7 @@ where
         context: Self::PostExecutionContext,
     ) -> Self::Outcome {
         let (sk_out,) = context;
-        maker.destroy_lwe_secret_key(sk_out);
+        maker.destroy_lwe_secret_key(&sk_out);
         unimplemented!()
     }
 

@@ -152,9 +152,9 @@ where
                 proto_secret_key,
                 &proto_output_ciphertext,
             );
-        maker.destroy_plaintext_vector(plaintext_vector);
-        maker.destroy_glwe_secret_key(secret_key);
-        maker.destroy_glwe_ciphertext_vector(ciphertext_vector);
+        maker.destroy_plaintext_vector(&plaintext_vector);
+        maker.destroy_glwe_secret_key(&secret_key);
+        maker.destroy_glwe_ciphertext_vector(&ciphertext_vector);
         (
             maker.transform_plaintext_vector_to_raw_vec(proto_plaintext_vector),
             maker.transform_plaintext_vector_to_raw_vec(&proto_output_plaintext_vector),

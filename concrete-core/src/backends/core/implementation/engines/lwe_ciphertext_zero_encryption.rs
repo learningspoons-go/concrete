@@ -34,8 +34,8 @@ impl LweCiphertextZeroEncryptionEngine<LweSecretKey32, LweCiphertext32> for Core
     /// #
     /// assert_eq!(ciphertext.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(ciphertext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&ciphertext)?;
     /// #
     /// # Ok(())
     /// # }
@@ -87,8 +87,8 @@ impl LweCiphertextZeroEncryptionEngine<LweSecretKey64, LweCiphertext64> for Core
     /// #
     /// assert_eq!(ciphertext.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(ciphertext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&ciphertext)?;
     /// #
     /// # Ok(())
     /// # }

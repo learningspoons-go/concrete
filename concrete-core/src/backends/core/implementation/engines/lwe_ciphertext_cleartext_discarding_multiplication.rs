@@ -43,11 +43,11 @@ impl
     /// #
     /// assert_eq!(ciphertext_2.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(cleartext)?;
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(ciphertext_1)?;
-    /// engine.destroy(ciphertext_2)?;
+    /// engine.destroy(&cleartext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&ciphertext_1)?;
+    /// engine.destroy(&ciphertext_2)?;
     /// #
     /// # Ok(())
     /// # }
@@ -111,11 +111,11 @@ impl
     /// #
     /// assert_eq!(ciphertext_2.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(cleartext)?;
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(ciphertext_1)?;
-    /// engine.destroy(ciphertext_2)?;
+    /// engine.destroy(&cleartext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&ciphertext_1)?;
+    /// engine.destroy(&ciphertext_2)?;
     /// #
     /// # Ok(())
     /// # }

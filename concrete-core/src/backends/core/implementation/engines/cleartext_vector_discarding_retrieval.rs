@@ -24,7 +24,7 @@ impl CleartextVectorDiscardingRetrievalEngine<CleartextVector32, u32> for CoreEn
     /// engine.discard_retrieve_cleartext_vector(retrieved.as_mut_slice(), &cleartext_vector)?;
     ///
     /// assert_eq!(retrieved[0], 3_u32);
-    /// engine.destroy(cleartext_vector)?;
+    /// engine.destroy(&cleartext_vector)?;
     /// #
     /// # Ok(())
     /// # }
@@ -67,7 +67,7 @@ impl CleartextVectorDiscardingRetrievalEngine<CleartextVector64, u64> for CoreEn
     /// engine.discard_retrieve_cleartext_vector(retrieved.as_mut_slice(), &cleartext_vector)?;
     ///
     /// assert_eq!(retrieved[0], 3_u64);
-    /// engine.destroy(cleartext_vector)?;
+    /// engine.destroy(&cleartext_vector)?;
     /// #
     /// # Ok(())
     /// # }

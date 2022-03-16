@@ -16,7 +16,7 @@ where
         &mut self,
         entity: &PlaintextVector,
     ) -> Self::PlaintextVectorProto;
-    fn destroy_plaintext_vector(&mut self, entity: PlaintextVector);
+    fn destroy_plaintext_vector(&mut self, entity: &PlaintextVector);
 }
 
 #[cfg(feature = "backend_core")]
@@ -41,7 +41,7 @@ mod backend_core {
             ProtoPlaintextVector32(entity.to_owned())
         }
 
-        fn destroy_plaintext_vector(&mut self, entity: PlaintextVector32) {
+        fn destroy_plaintext_vector(&mut self, entity: &PlaintextVector32) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -61,7 +61,7 @@ mod backend_core {
             ProtoPlaintextVector64(entity.to_owned())
         }
 
-        fn destroy_plaintext_vector(&mut self, entity: PlaintextVector64) {
+        fn destroy_plaintext_vector(&mut self, entity: &PlaintextVector64) {
             self.core_engine.destroy(entity).unwrap();
         }
     }

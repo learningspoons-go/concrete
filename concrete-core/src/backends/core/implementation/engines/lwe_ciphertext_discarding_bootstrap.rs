@@ -67,15 +67,15 @@ impl
     /// #
     /// assert_eq!(output.lwe_dimension(), lwe_dim_output);
     ///
-    /// engine.destroy(lwe_sk)?;
-    /// engine.destroy(glwe_sk)?;
-    /// engine.destroy(bsk)?;
-    /// engine.destroy(lwe_sk_output)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(acc)?;
-    /// engine.destroy(input)?;
-    /// engine.destroy(output)?;
+    /// engine.destroy(&lwe_sk)?;
+    /// engine.destroy(&glwe_sk)?;
+    /// engine.destroy(&bsk)?;
+    /// engine.destroy(&lwe_sk_output)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&acc)?;
+    /// engine.destroy(&input)?;
+    /// engine.destroy(&output)?;
     /// #
     /// # Ok(())
     /// # }
@@ -162,15 +162,15 @@ impl
     /// #
     /// assert_eq!(output.lwe_dimension(), lwe_dim_output);
     ///
-    /// engine.destroy(lwe_sk)?;
-    /// engine.destroy(glwe_sk)?;
-    /// engine.destroy(bsk)?;
-    /// engine.destroy(lwe_sk_output)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(acc)?;
-    /// engine.destroy(input)?;
-    /// engine.destroy(output)?;
+    /// engine.destroy(&lwe_sk)?;
+    /// engine.destroy(&glwe_sk)?;
+    /// engine.destroy(&bsk)?;
+    /// engine.destroy(&lwe_sk_output)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&acc)?;
+    /// engine.destroy(&input)?;
+    /// engine.destroy(&output)?;
     /// #
     /// # Ok(())
     /// # }

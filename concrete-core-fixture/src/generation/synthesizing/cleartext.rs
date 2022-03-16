@@ -10,7 +10,7 @@ where
 {
     fn synthesize_cleartext(&mut self, prototype: &Self::CleartextProto) -> Cleartext;
     fn unsynthesize_cleartext(&mut self, entity: &Cleartext) -> Self::CleartextProto;
-    fn destroy_cleartext(&mut self, entity: Cleartext);
+    fn destroy_cleartext(&mut self, entity: &Cleartext);
 }
 
 #[cfg(feature = "backend_core")]
@@ -29,7 +29,7 @@ mod backend_core {
             ProtoCleartext32(entity.to_owned())
         }
 
-        fn destroy_cleartext(&mut self, entity: Cleartext32) {
+        fn destroy_cleartext(&mut self, entity: &Cleartext32) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -43,7 +43,7 @@ mod backend_core {
             ProtoCleartext64(entity.to_owned())
         }
 
-        fn destroy_cleartext(&mut self, entity: Cleartext64) {
+        fn destroy_cleartext(&mut self, entity: &Cleartext64) {
             self.core_engine.destroy(entity).unwrap();
         }
     }

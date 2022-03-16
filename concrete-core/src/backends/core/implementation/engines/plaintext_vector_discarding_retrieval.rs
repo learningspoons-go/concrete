@@ -25,7 +25,7 @@ impl PlaintextVectorDiscardingRetrievalEngine<PlaintextVector32, u32> for CoreEn
     /// engine.discard_retrieve_plaintext_vector(output.as_mut_slice(), &plaintext_vector)?;
     /// #
     /// assert_eq!(output[0], 3_u32 << 20);
-    /// engine.destroy(plaintext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
     /// #
     /// # Ok(())
     /// # }
@@ -69,7 +69,7 @@ impl PlaintextVectorDiscardingRetrievalEngine<PlaintextVector64, u64> for CoreEn
     /// engine.discard_retrieve_plaintext_vector(output.as_mut_slice(), &plaintext_vector)?;
     /// #
     /// assert_eq!(output[0], 3_u64 << 20);
-    /// engine.destroy(plaintext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
     /// #
     /// # Ok(())
     /// # }

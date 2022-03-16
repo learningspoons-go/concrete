@@ -44,10 +44,10 @@ impl GlweCiphertextDecryptionEngine<GlweSecretKey32, GlweCiphertext32, Plaintext
     /// #     plaintext_vector.plaintext_count()
     /// # );
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(ciphertext)?;
-    /// engine.destroy(decrypted_plaintext_vector)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&ciphertext)?;
+    /// engine.destroy(&decrypted_plaintext_vector)?;
     /// #
     /// # Ok(())
     /// # }
@@ -106,10 +106,10 @@ impl GlweCiphertextDecryptionEngine<GlweSecretKey64, GlweCiphertext64, Plaintext
     /// #     plaintext_vector.plaintext_count()
     /// # );
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(ciphertext)?;
-    /// engine.destroy(decrypted_plaintext_vector)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&ciphertext)?;
+    /// engine.destroy(&decrypted_plaintext_vector)?;
     /// #
     /// # Ok(())
     /// # }

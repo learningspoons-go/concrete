@@ -48,9 +48,9 @@ impl
     /// assert_eq!(ciphertext_vector.polynomial_size(), polynomial_size);
     /// assert_eq!(ciphertext_vector.glwe_dimension(), glwe_dimension);
     ///
-    /// engine.destroy(ciphertext_vector)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(key)?;
+    /// engine.destroy(&ciphertext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&key)?;
     /// #
     /// # Ok(())
     /// # }
@@ -124,9 +124,9 @@ impl
     /// assert_eq!(ciphertext_vector.polynomial_size(), polynomial_size);
     /// assert_eq!(ciphertext_vector.glwe_dimension(), glwe_dimension);
     ///
-    /// engine.destroy(ciphertext_vector)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(key)?;
+    /// engine.destroy(&ciphertext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&key)?;
     /// #
     /// # Ok(())
     /// # }

@@ -1,6 +1,7 @@
-use super::engine_error;
 use crate::specification::engines::AbstractEngine;
 use crate::specification::entities::AbstractEntity;
+
+use super::engine_error;
 
 engine_error! {
     DestructionError for DestructionEngine @
@@ -26,7 +27,7 @@ where
     Entity: AbstractEntity,
 {
     /// Destroys an entity.
-    fn destroy(&mut self, entity: Entity) -> Result<(), DestructionError<Self::EngineError>>;
+    fn destroy(&mut self, entity: &Entity) -> Result<(), DestructionError<Self::EngineError>>;
 
     /// Unsafely destroys an entity.
     ///
@@ -34,5 +35,5 @@ where
     /// For the _general_ safety concerns regarding this operation, refer to the different variants
     /// of [`DestructionError`]. For safety concerns _specific_ to an
     /// engine, refer to the implementer safety section.
-    unsafe fn destroy_unchecked(&mut self, entity: Entity);
+    unsafe fn destroy_unchecked(&mut self, entity: &Entity);
 }

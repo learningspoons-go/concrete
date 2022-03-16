@@ -35,8 +35,8 @@ impl GlweCiphertextZeroEncryptionEngine<GlweSecretKey32, GlweCiphertext32> for C
     /// assert_eq!(ciphertext.glwe_dimension(), glwe_dimension);
     /// assert_eq!(ciphertext.polynomial_size(), polynomial_size);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(ciphertext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&ciphertext)?;
     /// #
     /// # Ok(())
     /// # }
@@ -90,8 +90,8 @@ impl GlweCiphertextZeroEncryptionEngine<GlweSecretKey64, GlweCiphertext64> for C
     /// assert_eq!(ciphertext.glwe_dimension(), glwe_dimension);
     /// assert_eq!(ciphertext.polynomial_size(), polynomial_size);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(ciphertext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&ciphertext)?;
     /// #
     /// # Ok(())
     /// # }

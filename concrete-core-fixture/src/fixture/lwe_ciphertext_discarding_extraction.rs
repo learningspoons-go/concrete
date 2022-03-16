@@ -138,8 +138,8 @@ where
             maker.transmute_glwe_secret_key_to_lwe_secret_key(proto_glwe_secret_key);
         let proto_output_plaintext = maker
             .decrypt_lwe_ciphertext_to_plaintext(&proto_lwe_secret_key, &proto_output_ciphertext);
-        maker.destroy_lwe_ciphertext(lwe_ciphertext);
-        maker.destroy_glwe_ciphertext(glwe_ciphertext);
+        maker.destroy_lwe_ciphertext(&lwe_ciphertext);
+        maker.destroy_glwe_ciphertext(&glwe_ciphertext);
         (
             maker.transform_plaintext_vector_to_raw_vec(proto_plaintext_vector)[_parameters.nth.0],
             maker.transform_plaintext_to_raw(&proto_output_plaintext),

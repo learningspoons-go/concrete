@@ -16,7 +16,7 @@ where
         &mut self,
         entity: &GlweCiphertextVector,
     ) -> Self::GlweCiphertextVectorProto;
-    fn destroy_glwe_ciphertext_vector(&mut self, entity: GlweCiphertextVector);
+    fn destroy_glwe_ciphertext_vector(&mut self, entity: &GlweCiphertextVector);
 }
 
 #[cfg(feature = "backend_core")]
@@ -45,7 +45,7 @@ mod backend_core {
             ProtoBinaryGlweCiphertextVector32(entity.to_owned())
         }
 
-        fn destroy_glwe_ciphertext_vector(&mut self, entity: GlweCiphertextVector32) {
+        fn destroy_glwe_ciphertext_vector(&mut self, entity: &GlweCiphertextVector32) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -65,7 +65,7 @@ mod backend_core {
             ProtoBinaryGlweCiphertextVector64(entity.to_owned())
         }
 
-        fn destroy_glwe_ciphertext_vector(&mut self, entity: GlweCiphertextVector64) {
+        fn destroy_glwe_ciphertext_vector(&mut self, entity: &GlweCiphertextVector64) {
             self.core_engine.destroy(entity).unwrap();
         }
     }

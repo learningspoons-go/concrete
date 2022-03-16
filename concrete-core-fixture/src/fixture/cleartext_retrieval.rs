@@ -79,7 +79,7 @@ where
     ) -> Self::Outcome {
         let (cleartext, raw_output) = context;
         let proto_output_cleartext = maker.unsynthesize_cleartext(&cleartext);
-        maker.destroy_cleartext(cleartext);
+        maker.destroy_cleartext(&cleartext);
         (
             maker.transform_cleartext_to_raw(&proto_output_cleartext),
             raw_output,

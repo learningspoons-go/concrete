@@ -76,7 +76,7 @@ where
     ) -> Self::Outcome {
         let (plaintext,) = context;
         let proto_output_plaintext = maker.unsynthesize_plaintext(&plaintext);
-        maker.destroy_plaintext(plaintext);
+        maker.destroy_plaintext(&plaintext);
         (
             sample_proto.0,
             maker.transform_plaintext_to_raw(&proto_output_plaintext),

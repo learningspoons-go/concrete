@@ -112,8 +112,8 @@ where
             .trivially_decrypt_lwe_ciphertext_vector_to_plaintext_vector(
                 &proto_output_ciphertext_vector,
             );
-        maker.destroy_plaintext_vector(plaintext_vector);
-        maker.destroy_lwe_ciphertext_vector(ciphertext_vector);
+        maker.destroy_plaintext_vector(&plaintext_vector);
+        maker.destroy_lwe_ciphertext_vector(&ciphertext_vector);
         (
             maker.transform_plaintext_vector_to_raw_vec(proto_plaintext_vector),
             maker.transform_plaintext_vector_to_raw_vec(&proto_output_plaintext_vector),

@@ -22,7 +22,7 @@ impl CleartextDiscardingRetrievalEngine<Cleartext32, u32> for CoreEngine {
     /// engine.discard_retrieve_cleartext(&mut output, &cleartext)?;
     ///
     /// assert_eq!(output, 3_u32);
-    /// engine.destroy(cleartext)?;
+    /// engine.destroy(&cleartext)?;
     /// #
     /// # Ok(())
     /// # }
@@ -63,7 +63,7 @@ impl CleartextDiscardingRetrievalEngine<Cleartext64, u64> for CoreEngine {
     /// engine.discard_retrieve_cleartext(&mut output, &cleartext)?;
     ///
     /// assert_eq!(output, 3_u64);
-    /// engine.destroy(cleartext)?;
+    /// engine.destroy(&cleartext)?;
     /// #
     /// # Ok(())
     /// # }

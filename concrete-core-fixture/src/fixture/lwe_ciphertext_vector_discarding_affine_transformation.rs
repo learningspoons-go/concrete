@@ -190,10 +190,10 @@ where
             .iter()
             .zip(raw_cleartext_vector.iter())
             .fold(raw_bias, |a, (c, w)| a.wrapping_add(c.wrapping_mul(*w)));
-        maker.destroy_lwe_ciphertext(output_ciphertext);
-        maker.destroy_lwe_ciphertext_vector(ciphertext_vector);
-        maker.destroy_cleartext_vector(weights);
-        maker.destroy_plaintext(bias);
+        maker.destroy_lwe_ciphertext(&output_ciphertext);
+        maker.destroy_lwe_ciphertext_vector(&ciphertext_vector);
+        maker.destroy_cleartext_vector(&weights);
+        maker.destroy_plaintext(&bias);
         (
             predicted_output,
             maker.transform_plaintext_to_raw(&proto_output_plaintext),

@@ -34,11 +34,11 @@ impl LweCiphertextFusingSubtractionEngine<LweCiphertext32, LweCiphertext32> for 
     /// #
     /// assert_eq!(ciphertext_2.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext_1)?;
-    /// engine.destroy(ciphertext_1)?;
-    /// engine.destroy(plaintext_2)?;
-    /// engine.destroy(ciphertext_2)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext_1)?;
+    /// engine.destroy(&ciphertext_1)?;
+    /// engine.destroy(&plaintext_2)?;
+    /// engine.destroy(&ciphertext_2)?;
     /// #
     /// # Ok(())
     /// # }
@@ -92,11 +92,11 @@ impl LweCiphertextFusingSubtractionEngine<LweCiphertext64, LweCiphertext64> for 
     /// #
     /// assert_eq!(ciphertext_2.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext_1)?;
-    /// engine.destroy(ciphertext_1)?;
-    /// engine.destroy(plaintext_2)?;
-    /// engine.destroy(ciphertext_2)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext_1)?;
+    /// engine.destroy(&ciphertext_1)?;
+    /// engine.destroy(&plaintext_2)?;
+    /// engine.destroy(&ciphertext_2)?;
     /// #
     /// # Ok(())
     /// # }

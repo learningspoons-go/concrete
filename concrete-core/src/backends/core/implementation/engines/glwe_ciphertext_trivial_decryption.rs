@@ -29,9 +29,9 @@ impl GlweCiphertextTrivialDecryptionEngine<GlweCiphertext32, PlaintextVector32> 
     ///
     /// assert_eq!(output.plaintext_count(), PlaintextCount(polynomial_size.0));
     ///
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(ciphertext)?;
-    /// engine.destroy(output)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&ciphertext)?;
+    /// engine.destroy(&output)?;
     ///
     /// # Ok(())
     /// # }
@@ -77,9 +77,9 @@ impl GlweCiphertextTrivialDecryptionEngine<GlweCiphertext64, PlaintextVector64> 
     ///
     /// assert_eq!(output.plaintext_count(), PlaintextCount(polynomial_size.0));
     ///
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(ciphertext)?;
-    /// engine.destroy(output)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&ciphertext)?;
+    /// engine.destroy(&output)?;
     ///
     /// # Ok(())
     /// # }

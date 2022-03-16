@@ -47,10 +47,10 @@ impl
     /// #     PlaintextCount(8)
     /// # );
     ///
-    /// engine.destroy(ciphertext_vector)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(decrypted_plaintext_vector)?;
-    /// engine.destroy(key)?;
+    /// engine.destroy(&ciphertext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&decrypted_plaintext_vector)?;
+    /// engine.destroy(&key)?;
     /// #
     /// # Ok(())
     /// # }
@@ -114,10 +114,10 @@ impl
     /// #     PlaintextCount(8)
     /// # );
     ///
-    /// engine.destroy(ciphertext_vector)?;
-    /// engine.destroy(plaintext_vector)?;
-    /// engine.destroy(decrypted_plaintext_vector)?;
-    /// engine.destroy(key)?;
+    /// engine.destroy(&ciphertext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
+    /// engine.destroy(&decrypted_plaintext_vector)?;
+    /// engine.destroy(&key)?;
     /// #
     /// # Ok(())
     /// # }

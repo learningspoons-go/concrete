@@ -50,7 +50,7 @@ impl PrototypesGlweSecretKey<Precision32, BinaryKeyDistribution> for Maker {
     ) -> Self::LweSecretKeyProto {
         ProtoBinaryLweSecretKey32(
             self.core_engine
-                .transmute_glwe_secret_key_to_lwe_secret_key(glwe_key.0.to_owned())
+                .transmute_glwe_secret_key_to_lwe_secret_key(&glwe_key.0)
                 .unwrap(),
         )
     }
@@ -77,7 +77,7 @@ impl PrototypesGlweSecretKey<Precision64, BinaryKeyDistribution> for Maker {
     ) -> Self::LweSecretKeyProto {
         ProtoBinaryLweSecretKey64(
             self.core_engine
-                .transmute_glwe_secret_key_to_lwe_secret_key(glwe_key.0.to_owned())
+                .transmute_glwe_secret_key_to_lwe_secret_key(&glwe_key.0)
                 .unwrap(),
         )
     }

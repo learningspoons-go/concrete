@@ -23,7 +23,7 @@ where
     /// Does the transmutation of the GLWE secret key into a LWE secret key
     fn transmute_glwe_secret_key_to_lwe_secret_key(
         &mut self,
-        glwe_secret_key: InputKey,
+        glwe_secret_key: &InputKey,
     ) -> Result<OutputKey, GlweToLweSecretKeyTransmutationEngineError<Self::EngineError>>;
 
     /// Unsafely transmutes a GLWE secret key into a lwe secret key
@@ -34,6 +34,6 @@ where
     /// For safety concerns _specific_ to an engine, refer to the implementer safety section.
     unsafe fn transmute_glwe_secret_key_to_lwe_secret_key_unchecked(
         &mut self,
-        glwe_secret_key: InputKey,
+        glwe_secret_key: &InputKey,
     ) -> OutputKey;
 }

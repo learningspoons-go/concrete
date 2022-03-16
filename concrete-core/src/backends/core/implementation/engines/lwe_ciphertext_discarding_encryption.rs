@@ -37,9 +37,9 @@ impl LweCiphertextDiscardingEncryptionEngine<LweSecretKey32, Plaintext32, LweCip
     /// #
     /// assert_eq!(ciphertext.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(ciphertext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&ciphertext)?;
     /// #
     /// # Ok(())
     /// # }
@@ -101,9 +101,9 @@ impl LweCiphertextDiscardingEncryptionEngine<LweSecretKey64, Plaintext64, LweCip
     /// #
     /// assert_eq!(ciphertext.lwe_dimension(), lwe_dimension);
     ///
-    /// engine.destroy(key)?;
-    /// engine.destroy(plaintext)?;
-    /// engine.destroy(ciphertext)?;
+    /// engine.destroy(&key)?;
+    /// engine.destroy(&plaintext)?;
+    /// engine.destroy(&ciphertext)?;
     /// #
     /// # Ok(())
     /// # }

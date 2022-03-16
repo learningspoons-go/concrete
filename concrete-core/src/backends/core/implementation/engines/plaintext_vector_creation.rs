@@ -21,7 +21,7 @@ impl PlaintextVectorCreationEngine<u32, PlaintextVector32> for CoreEngine {
     /// let plaintext_vector: PlaintextVector32 = engine.create_plaintext_vector(&input)?;
     /// #
     /// assert_eq!(plaintext_vector.plaintext_count(), PlaintextCount(3));
-    /// engine.destroy(plaintext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
     /// #
     /// # Ok(())
     /// # }
@@ -59,7 +59,7 @@ impl PlaintextVectorCreationEngine<u64, PlaintextVector64> for CoreEngine {
     /// let plaintext_vector: PlaintextVector64 = engine.create_plaintext_vector(&input)?;
     /// #
     /// assert_eq!(plaintext_vector.plaintext_count(), PlaintextCount(3));
-    /// engine.destroy(plaintext_vector)?;
+    /// engine.destroy(&plaintext_vector)?;
     /// #
     /// # Ok(())
     /// # }

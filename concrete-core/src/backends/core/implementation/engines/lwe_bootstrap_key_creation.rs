@@ -48,9 +48,9 @@ impl LweBootstrapKeyCreationEngine<LweSecretKey32, GlweSecretKey32, LweBootstrap
     /// assert_eq!(bsk.decomposition_base_log(), dec_bl);
     /// assert_eq!(bsk.decomposition_level_count(), dec_lc);
     ///
-    /// engine.destroy(lwe_sk)?;
-    /// engine.destroy(glwe_sk)?;
-    /// engine.destroy(bsk)?;
+    /// engine.destroy(&lwe_sk)?;
+    /// engine.destroy(&glwe_sk)?;
+    /// engine.destroy(&bsk)?;
     /// #
     /// # Ok(())
     /// # }
@@ -139,9 +139,9 @@ impl LweBootstrapKeyCreationEngine<LweSecretKey64, GlweSecretKey64, LweBootstrap
     /// assert_eq!(bsk.decomposition_base_log(), dec_bl);
     /// assert_eq!(bsk.decomposition_level_count(), dec_lc);
     ///
-    /// engine.destroy(lwe_sk)?;
-    /// engine.destroy(glwe_sk)?;
-    /// engine.destroy(bsk)?;
+    /// engine.destroy(&lwe_sk)?;
+    /// engine.destroy(&glwe_sk)?;
+    /// engine.destroy(&bsk)?;
     /// #
     /// # Ok(())
     /// # }
@@ -230,9 +230,9 @@ impl LweBootstrapKeyCreationEngine<LweSecretKey32, GlweSecretKey32, FourierLweBo
     /// assert_eq!(bsk.decomposition_base_log(), dec_bl);
     /// assert_eq!(bsk.decomposition_level_count(), dec_lc);
     ///
-    /// engine.destroy(lwe_sk)?;
-    /// engine.destroy(glwe_sk)?;
-    /// engine.destroy(bsk)?;
+    /// engine.destroy(&lwe_sk)?;
+    /// engine.destroy(&glwe_sk)?;
+    /// engine.destroy(&bsk)?;
     /// #
     /// # Ok(())
     /// # }
@@ -336,9 +336,9 @@ impl LweBootstrapKeyCreationEngine<LweSecretKey64, GlweSecretKey64, FourierLweBo
     /// assert_eq!(bsk.decomposition_base_log(), dec_bl);
     /// assert_eq!(bsk.decomposition_level_count(), dec_lc);
     ///
-    /// engine.destroy(lwe_sk);
-    /// engine.destroy(glwe_sk);
-    /// engine.destroy(bsk);
+    /// engine.destroy(&lwe_sk);
+    /// engine.destroy(&glwe_sk);
+    /// engine.destroy(&bsk);
     /// #
     /// # Ok(())
     /// # }

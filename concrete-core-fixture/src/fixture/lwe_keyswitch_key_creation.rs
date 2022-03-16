@@ -122,7 +122,7 @@ where
         context: Self::PostExecutionContext,
     ) -> Self::Outcome {
         let (ksk,) = context;
-        maker.destroy_lwe_keyswitch_key(ksk);
+        maker.destroy_lwe_keyswitch_key(&ksk);
         unimplemented!()
     }
 

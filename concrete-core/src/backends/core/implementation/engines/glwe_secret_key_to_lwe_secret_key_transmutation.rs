@@ -25,24 +25,26 @@ impl GlweToLweSecretKeyTransmutationEngine<GlweSecretKey32, LweSecretKey32> for 
     /// assert_eq!(glwe_secret_key.glwe_dimension(), glwe_dimension);
     /// assert_eq!(glwe_secret_key.polynomial_size(), polynomial_size);
     ///
-    /// let lwe_secret_key = engine.transmute_glwe_secret_key_to_lwe_secret_key(glwe_secret_key)?;
+    /// let lwe_secret_key = engine.transmute_glwe_secret_key_to_lwe_secret_key(&glwe_secret_key)?;
     /// assert_eq!(lwe_secret_key.lwe_dimension(), LweDimension(8));
     ///
+    /// engine.destroy(&glwe_secret_key)?;
+    /// engine.destroy(&lwe_secret_key)?;
     /// # Ok(())
     /// # }
     /// ```
     fn transmute_glwe_secret_key_to_lwe_secret_key(
         &mut self,
-        glwe_secret_key: GlweSecretKey32,
+        glwe_secret_key: &GlweSecretKey32,
     ) -> Result<LweSecretKey32, GlweToLweSecretKeyTransmutationEngineError<Self::EngineError>> {
         Ok(unsafe { self.transmute_glwe_secret_key_to_lwe_secret_key_unchecked(glwe_secret_key) })
     }
 
     unsafe fn transmute_glwe_secret_key_to_lwe_secret_key_unchecked(
         &mut self,
-        glwe_secret_key: GlweSecretKey32,
+        glwe_secret_key: &GlweSecretKey32,
     ) -> LweSecretKey32 {
-        LweSecretKey32(glwe_secret_key.0.into_lwe_secret_key())
+        LweSecretKey32(glwe_secret_key.0.to_owned().into_lwe_secret_key())
     }
 }
 
@@ -65,23 +67,25 @@ impl GlweToLweSecretKeyTransmutationEngine<GlweSecretKey64, LweSecretKey64> for 
     /// assert_eq!(glwe_secret_key.glwe_dimension(), glwe_dimension);
     /// assert_eq!(glwe_secret_key.polynomial_size(), polynomial_size);
     ///
-    /// let lwe_secret_key = engine.transmute_glwe_secret_key_to_lwe_secret_key(glwe_secret_key)?;
+    /// let lwe_secret_key = engine.transmute_glwe_secret_key_to_lwe_secret_key(&glwe_secret_key)?;
     /// assert_eq!(lwe_secret_key.lwe_dimension(), LweDimension(8));
     ///
+    /// engine.destroy(&glwe_secret_key)?;
+    /// engine.destroy(&lwe_secret_key)?;
     /// # Ok(())
     /// # }
     /// ```
     fn transmute_glwe_secret_key_to_lwe_secret_key(
         &mut self,
-        glwe_secret_key: GlweSecretKey64,
+        glwe_secret_key: &GlweSecretKey64,
     ) -> Result<LweSecretKey64, GlweToLweSecretKeyTransmutationEngineError<Self::EngineError>> {
         Ok(unsafe { self.transmute_glwe_secret_key_to_lwe_secret_key_unchecked(glwe_secret_key) })
     }
 
     unsafe fn transmute_glwe_secret_key_to_lwe_secret_key_unchecked(
         &mut self,
-        glwe_secret_key: GlweSecretKey64,
+        glwe_secret_key: &GlweSecretKey64,
     ) -> LweSecretKey64 {
-        LweSecretKey64(glwe_secret_key.0.into_lwe_secret_key())
+        LweSecretKey64(glwe_secret_key.0.to_owned().into_lwe_secret_key())
     }
 }

@@ -138,9 +138,9 @@ where
         let (secret_key, ciphertext, plaintext) = context;
         let (proto_plaintext, _) = sample_proto;
         let proto_output_plaintext = maker.unsynthesize_plaintext(&plaintext);
-        maker.destroy_lwe_ciphertext(ciphertext);
-        maker.destroy_plaintext(plaintext);
-        maker.destroy_lwe_secret_key(secret_key);
+        maker.destroy_lwe_ciphertext(&ciphertext);
+        maker.destroy_plaintext(&plaintext);
+        maker.destroy_lwe_secret_key(&secret_key);
         (
             maker.transform_plaintext_to_raw(proto_plaintext),
             maker.transform_plaintext_to_raw(&proto_output_plaintext),

@@ -17,7 +17,7 @@ impl CleartextCreationEngine<u32, Cleartext32> for CoreEngine {
     ///
     /// let mut engine = CoreEngine::new()?;
     /// let cleartext: Cleartext32 = engine.create_cleartext(&input)?;
-    /// engine.destroy(cleartext)?;
+    /// engine.destroy(&cleartext)?;
     /// #
     /// # Ok(())
     /// # }
@@ -48,7 +48,7 @@ impl CleartextCreationEngine<u64, Cleartext64> for CoreEngine {
     ///
     /// let mut engine = CoreEngine::new()?;
     /// let cleartext: Cleartext64 = engine.create_cleartext(&input)?;
-    /// engine.destroy(cleartext)?;
+    /// engine.destroy(&cleartext)?;
     /// #
     /// # Ok(())
     /// # }

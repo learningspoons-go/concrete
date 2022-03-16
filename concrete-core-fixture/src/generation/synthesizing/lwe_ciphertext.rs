@@ -10,7 +10,7 @@ where
 {
     fn synthesize_lwe_ciphertext(&mut self, prototype: &Self::LweCiphertextProto) -> LweCiphertext;
     fn unsynthesize_lwe_ciphertext(&mut self, entity: &LweCiphertext) -> Self::LweCiphertextProto;
-    fn destroy_lwe_ciphertext(&mut self, entity: LweCiphertext);
+    fn destroy_lwe_ciphertext(&mut self, entity: &LweCiphertext);
 }
 
 #[cfg(feature = "backend_core")]
@@ -35,7 +35,7 @@ mod backend_core {
             ProtoBinaryLweCiphertext32(entity.to_owned())
         }
 
-        fn destroy_lwe_ciphertext(&mut self, entity: LweCiphertext32) {
+        fn destroy_lwe_ciphertext(&mut self, entity: &LweCiphertext32) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -55,7 +55,7 @@ mod backend_core {
             ProtoBinaryLweCiphertext64(entity.to_owned())
         }
 
-        fn destroy_lwe_ciphertext(&mut self, entity: LweCiphertext64) {
+        fn destroy_lwe_ciphertext(&mut self, entity: &LweCiphertext64) {
             self.core_engine.destroy(entity).unwrap();
         }
     }

@@ -10,7 +10,7 @@ where
 {
     fn synthesize_plaintext(&mut self, prototype: &Self::PlaintextProto) -> Plaintext;
     fn unsynthesize_plaintext(&mut self, entity: &Plaintext) -> Self::PlaintextProto;
-    fn destroy_plaintext(&mut self, entity: Plaintext);
+    fn destroy_plaintext(&mut self, entity: &Plaintext);
 }
 
 #[cfg(feature = "backend_core")]
@@ -29,7 +29,7 @@ mod backend_core {
             ProtoPlaintext32(entity.to_owned())
         }
 
-        fn destroy_plaintext(&mut self, entity: Plaintext32) {
+        fn destroy_plaintext(&mut self, entity: &Plaintext32) {
             self.core_engine.destroy(entity).unwrap();
         }
     }
@@ -43,7 +43,7 @@ mod backend_core {
             ProtoPlaintext64(entity.to_owned())
         }
 
-        fn destroy_plaintext(&mut self, entity: Plaintext64) {
+        fn destroy_plaintext(&mut self, entity: &Plaintext64) {
             self.core_engine.destroy(entity).unwrap();
         }
     }

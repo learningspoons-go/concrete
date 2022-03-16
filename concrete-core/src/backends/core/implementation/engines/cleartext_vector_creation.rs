@@ -20,7 +20,7 @@ impl CleartextVectorCreationEngine<u32, CleartextVector32> for CoreEngine {
     /// let cleartext_vector: CleartextVector32 = engine.create_cleartext_vector(&input)?;
     /// #
     /// assert_eq!(cleartext_vector.cleartext_count(), CleartextCount(100));
-    /// engine.destroy(cleartext_vector)?;
+    /// engine.destroy(&cleartext_vector)?;
     /// #
     /// # Ok(())
     /// # }
@@ -55,7 +55,7 @@ impl CleartextVectorCreationEngine<u64, CleartextVector64> for CoreEngine {
     /// let cleartext_vector: CleartextVector64 = engine.create_cleartext_vector(&input)?;
     /// #
     /// assert_eq!(cleartext_vector.cleartext_count(), CleartextCount(100));
-    /// engine.destroy(cleartext_vector)?;
+    /// engine.destroy(&cleartext_vector)?;
     /// #
     /// # Ok(())
     /// # }

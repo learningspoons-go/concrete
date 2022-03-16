@@ -75,7 +75,7 @@ where
         context: Self::PostExecutionContext,
     ) -> Self::Outcome {
         let (sk,) = context;
-        maker.destroy_lwe_secret_key(sk);
+        maker.destroy_lwe_secret_key(&sk);
         unimplemented!()
     }
 
