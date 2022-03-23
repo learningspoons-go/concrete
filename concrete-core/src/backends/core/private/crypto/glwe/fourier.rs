@@ -8,7 +8,7 @@ use crate::backends::core::private::crypto::bootstrap::FourierBuffers;
 use crate::backends::core::private::crypto::glwe::GlweCiphertext;
 use crate::backends::core::private::math::fft::{Complex64, FourierPolynomial};
 use crate::backends::core::private::math::tensor::{
-    ck_dim_eq, ck_dim_div, AsMutSlice, AsMutTensor, AsRefSlice, AsRefTensor, IntoTensor, Tensor,
+    ck_dim_div, ck_dim_eq, AsMutSlice, AsMutTensor, AsRefSlice, AsRefTensor, IntoTensor, Tensor,
 };
 use crate::backends::core::private::math::torus::UnsignedTorus;
 use crate::backends::core::private::crypto::encoding::Cleartext;
