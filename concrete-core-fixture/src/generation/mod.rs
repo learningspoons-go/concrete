@@ -19,7 +19,7 @@
 //! prototypical ones, and extracting _raw_ outputs. Also, the fixture developer should ensure that
 //! the entities are destroyed after the execution of the engine. Again, this can be done by the
 //! [`Maker`] instance and the `Synthesizes*` traits, which contains functions to destroy data.
-use crate::raw::generation::RawUnsignedIntegers;
+use crate::raw::generation::{RawFloats, RawUnsignedIntegers};
 use concrete_core::prelude::AbstractEngine;
 
 pub mod prototypes;
@@ -41,6 +41,17 @@ impl IntegerPrecision for Precision32 {
 pub struct Precision64;
 impl IntegerPrecision for Precision64 {
     type Raw = u64;
+}
+
+/// A trait for marker type representing float precision managed in `concrete_core`.
+pub trait FloatPrecision {
+    type Raw: RawFloats;
+}
+
+/// A type representing the 64 bits precision for floats.
+pub struct PrecisionF64;
+impl FloatPrecision for PrecisionF64 {
+    type Raw = f64;
 }
 
 /// The central structure used to generate the pre-execution context for all the fixtures.

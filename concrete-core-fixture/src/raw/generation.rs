@@ -1,6 +1,7 @@
 //! A module containing sampling entry points for raw integers
 use concrete_commons::numeric::{CastInto, UnsignedInteger};
 use concrete_core::backends::core::private::math::random::RandomGenerator;
+use concrete_core::prelude::numeric::Numeric;
 use std::fmt::Debug;
 use std::ops::Range;
 
@@ -207,5 +208,28 @@ impl RawUnsignedIntegers for u64 {
             *val = v as u64;
         });
         output
+    }
+}
+
+/// A trait to generate raw float values.
+pub trait RawFloats: Numeric + Debug {
+    fn one() -> Self;
+    fn one_vec(size: usize) -> Vec<Self>;
+    fn zero() -> Self;
+    fn zero_vec(size: usize) -> Vec<Self>;
+}
+
+impl RawFloats for f64 {
+    fn one() -> Self {
+        1f64
+    }
+    fn one_vec(size: usize) -> Vec<Self> {
+        vec![1f64; size]
+    }
+    fn zero() -> Self {
+        0f64
+    }
+    fn zero_vec(size: usize) -> Vec<Self> {
+        vec![0f64; size]
     }
 }
